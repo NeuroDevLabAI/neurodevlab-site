@@ -5,7 +5,7 @@ export const runtime = "nodejs";
 
 /* ============================================================================
    Feature D — live AI demo. The visitor types a repetitive task; the server
-   asks Claude for one short automation sketch. SECURITY / LOI2:
+   asks the AI provider for one short automation sketch. SECURITY / LOI2:
    - The Anthropic key is SERVER-ONLY (ANTHROPIC_API_KEY) — never exposed client
      side, never a NEXT_PUBLIC_* var.
    - Token spend is bounded: MAX_TOKENS cap + per-IP rate limit (in-memory) +

@@ -30,7 +30,7 @@ export function AiDemo() {
     if (value.length < 3 || state === "loading") return;
     setState("loading");
     setAnswer("");
-    track("demo_used");
+    track("demo_lancee");
     try {
       const res = await fetch("/api/demo", {
         method: "POST",
@@ -113,7 +113,7 @@ export function AiDemo() {
                   type="button"
                   onClick={() => runExample(t(k))}
                   disabled={state === "loading"}
-                  className="rounded-full border border-border px-3 py-1.5 text-xs text-muted transition-colors hover:border-border-strong hover:text-fg disabled:opacity-50"
+                  className="inline-flex min-h-[44px] items-center rounded-full border border-border px-3.5 text-xs text-muted transition-colors hover:border-border-strong hover:text-fg disabled:opacity-50"
                 >
                   {t(k)}
                 </button>

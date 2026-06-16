@@ -132,7 +132,7 @@ export function Calculator() {
       setter(v);
       if (!usedRef.current) {
         usedRef.current = true;
-        track("calc_used");
+        track("calculateur_utilise");
       }
     };
   }

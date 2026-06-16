@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/motion/Reveal";
+import { Link } from "@/i18n/navigation";
 import { CalendlyButton } from "@/components/ui/CalendlyButton";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { OG_LOCALES, buildAlternates } from "@/lib/config";
@@ -38,12 +39,19 @@ export default async function ContactPage({
   const t = await getTranslations("Contact");
   const c = await getTranslations("Cta");
   const g = await getTranslations("Guarantee");
+  const legal = await getTranslations("Legal");
 
   return (
     <div className="pt-28">
       <Container className="py-12">
         <Reveal>
-          <p className="eyebrow">{t("eyebrow")}</p>
+          <Link
+            href="/"
+            className="inline-flex min-h-[44px] items-center gap-1.5 text-sm text-muted transition-colors hover:text-fg"
+          >
+            <span aria-hidden="true">←</span> {legal("backHome")}
+          </Link>
+          <p className="eyebrow mt-3">{t("eyebrow")}</p>
           <h1 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">
             {t("title")}
           </h1>

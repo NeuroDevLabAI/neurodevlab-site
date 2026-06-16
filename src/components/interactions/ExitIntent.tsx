@@ -24,28 +24,68 @@ export function ExitIntent() {
   useEffect(() => {
     if (!EXIT_INTENT_ENABLED) return;
     if (sessionStorage.getItem(KEY)) return;
-    if (!window.matchMedia("(pointer:fine)").matches) return;
 
+    const cleanups: Array<() => void> = [];
+    function cleanupAll() {
+      cleanups.forEach((fn) => fn());
+      cleanups.length = 0;
+    }
     function trigger() {
       if (sessionStorage.getItem(KEY)) return;
       sessionStorage.setItem(KEY, "1");
       restoreRef.current = document.activeElement as HTMLElement | null;
       setOpen(true);
       track("exit_intent_shown");
-      document.removeEventListener("mouseout", onLeave);
-    }
-    function onLeave(e: MouseEvent) {
-      if (e.clientY <= 0 && !e.relatedTarget) trigger();
+      cleanupAll();
     }
 
-    const armed = window.setTimeout(
-      () => document.addEventListener("mouseout", onLeave),
-      4000,
-    );
-    return () => {
-      window.clearTimeout(armed);
-      document.removeEventListener("mouseout", onLeave);
-    };
+    const fine = window.matchMedia("(pointer: fine)").matches;
+
+    if (fine) {
+      // Desktop: real exit-intent — the cursor leaves through the top edge.
+      // Armed only after 4s so it never fires on load.
+      function onLeave(e: MouseEvent) {
+        if (e.clientY <= 0 && !e.relatedTarget) trigger();
+      }
+      const armed = window.setTimeout(
+        () => document.addEventListener("mouseout", onLeave),
+        4000,
+      );
+      cleanups.push(() => {
+        window.clearTimeout(armed);
+        document.removeEventListener("mouseout", onLeave);
+      });
+    } else {
+      // Mobile/touch: no mouse exit-intent. Fire only after REAL engagement —
+      // scrolled past halfway AND at least 25s on the page. Never on load, never
+      // spammy. (Back-button hijacking is intentionally avoided: it pollutes
+      // history and traps the Back gesture, a worse experience than the issue
+      // we're fixing.)
+      let scrolledHalf = false;
+      let dwelled = false;
+      function maybe() {
+        if (scrolledHalf && dwelled) trigger();
+      }
+      function onScroll() {
+        const doc = document.documentElement;
+        const max = doc.scrollHeight - window.innerHeight;
+        if (max > 0 && window.scrollY / max >= 0.5) {
+          scrolledHalf = true;
+          maybe();
+        }
+      }
+      const dwell = window.setTimeout(() => {
+        dwelled = true;
+        maybe();
+      }, 25000);
+      window.addEventListener("scroll", onScroll, { passive: true });
+      cleanups.push(() => {
+        window.clearTimeout(dwell);
+        window.removeEventListener("scroll", onScroll);
+      });
+    }
+
+    return cleanupAll;
   }, []);
 
   function close() {

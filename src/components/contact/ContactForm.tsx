@@ -73,7 +73,7 @@ export function ContactForm() {
       });
       if (res.ok) {
         setStatus("success");
-        track("form_submit", { locale });
+        track("brief_soumis", { locale });
         form.reset();
       } else if (res.status === 429) {
         setStatus("rate");

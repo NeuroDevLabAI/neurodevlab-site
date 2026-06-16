@@ -25,8 +25,8 @@
     "primary": "Décrivez votre besoin → proposition en 24h",
     "primaryShort": "Envoyez votre brief",
     "micro": "Gratuit, sans engagement — une proposition sur mesure en 24h.",
-    "secondary": "Vous préférez en parler ? Réservez un appel",
-    "secondaryShort": "Réserver un appel"
+    "secondary": "Vous préférez en parler ? Réservez un appel (téléphone, 30 min)",
+    "secondaryShort": "Réserver un appel téléphonique"
   },
   "Availability": {
     "open": "Disponible pour de nouveaux projets",
@@ -56,7 +56,7 @@
     "location": "Basé à Lausanne, Suisse",
     "locationDesc": "Établi en Suisse, actif dans toute l'Europe.",
     "response": "Réponse sous ~2 heures",
-    "responseDesc": "Priorité à l'asynchrone — votre brief reçoit une réponse humaine et rapide.",
+    "responseDesc": "Sans rendez-vous : décrivez votre besoin, recevez votre proposition sous 24h.",
     "privacy": "Conforme au RGPD et à la nLPD suisse",
     "privacyDesc": "Analytique sans cookies, aucun pistage intrusif.",
     "production": "Automatisations en production 24/7",
@@ -131,7 +131,7 @@
   "AiDemo": {
     "eyebrow": "Démo IA en direct",
     "title": "Décrivez une tâche. Voyez comment je l'automatiserais.",
-    "subtitle": "Saisissez une tâche répétitive de votre activité et obtenez un aperçu d'automatisation instantané — généré par Claude, exécuté sur mon serveur.",
+    "subtitle": "Saisissez une tâche répétitive de votre activité et obtenez un aperçu d'automatisation instantané — conçu par mon système en quelques secondes.",
     "placeholder": "ex. Chaque matin, je copie les nouvelles commandes depuis ma messagerie vers un tableur…",
     "send": "Obtenir l'idée d'automatisation",
     "sending": "Réflexion…",
@@ -143,7 +143,7 @@
     "disclaimer": "Un aperçu rapide, pas une proposition ferme — votre plan réel est cadré sur le brief.",
     "errorBusy": "Beaucoup de requêtes en ce moment. Réessayez dans une minute, ou envoyez simplement votre brief.",
     "errorGeneric": "La démo fait une petite pause. Envoyez votre brief et je vous répondrai personnellement.",
-    "poweredBy": "Généré par IA · Claude sur le serveur · rien n'est conservé",
+    "poweredBy": "Généré instantanément · rien n'est conservé",
     "inputLabel": "Décrivez une tâche répétitive"
   },
   "Pricing": {
@@ -189,7 +189,7 @@
   },
   "Faq": {
     "eyebrow": "FAQ",
-    "title": "Vos questions, nos réponses",
+    "title": "Vos questions, mes réponses",
     "subtitle": "Tout ce que vous demanderiez lors d'un premier appel — déjà répondu.",
     "q1": "En combien de temps pouvez-vous livrer ?",
     "a1": "La plupart des projets sont livrés en quelques jours à deux semaines. Votre premier workflow est garanti en production sous 5 jours — ou vous êtes remboursé.",
@@ -232,7 +232,7 @@
     "calendlyFallback": "Le calendrier ne se charge pas ?",
     "formHeading": "Décrivez votre besoin",
     "secondaryHeading": "Vous préférez d'abord en parler ?",
-    "secondarySubtitle": "Réservez plutôt un appel gratuit de 30 minutes — rare, mais toujours bienvenu.",
+    "secondarySubtitle": "Réservez plutôt un appel téléphonique gratuit de 30 minutes — rare, mais toujours bienvenu.",
     "name": "Nom",
     "namePlaceholder": "Jeanne Dupont",
     "email": "E-mail",
@@ -304,7 +304,7 @@
     "processTitle": "Comment ça marche",
     "processSubtitle": "Simple, rapide, et conçu pour tourner sans vous.",
     "step1Title": "Brief gratuit",
-    "step1Desc": "Nous identifions ce qui vous ralentit et choisissons le workflow à plus fort impact à automatiser en premier.",
+    "step1Desc": "J'identifie ce qui vous ralentit et choisis le workflow à plus fort impact à automatiser en premier.",
     "step2Title": "Construction en quelques jours",
     "step2Desc": "Je construis, teste et documente — vous recevez des points d'avancement tout du long.",
     "step3Title": "Livraison & mesure",
@@ -345,11 +345,11 @@
     "s3h": "Pourquoi je les collecte (base légale)",
     "s3b": "Pour vous répondre et préparer une proposition — c'est-à-dire votre consentement et les démarches précontractuelles effectuées à votre demande. Je ne vends ni ne loue jamais vos données, et je ne les utilise pas à des fins marketing sans rapport.",
     "s4h": "La démo IA en direct",
-    "s4b": "Le texte que vous saisissez dans la démo en direct est envoyé à Anthropic (Claude) pour générer une réponse. Merci de ne pas y coller d'informations personnelles ou confidentielles. Je ne conserve pas les conversations de la démo de mon côté.",
+    "s4b": "Le texte que vous saisissez dans la démo en direct est envoyé à un prestataire d'IA tiers pour générer une réponse. Merci de ne pas y coller d'informations personnelles ou confidentielles. Je ne conserve pas les conversations de la démo.",
     "s5h": "Analytique",
     "s5b": "J'utilise Plausible Analytics — sans cookies et respectueux de la vie privée. Aucun cookie, aucun pistage inter-sites ; les données sont agrégées, anonymes et hébergées dans l'UE. Il n'y a rien à consentir puisque rien ne vous identifie.",
     "s6h": "Les prestataires que j'utilise",
-    "s6b": "Quelques sous-traitants de confiance contribuent au fonctionnement du site : Vercel (hébergement), Resend (e-mails transactionnels), Telegram (notification des leads), Anthropic (la démo IA) et Plausible (analytique). Chacun ne traite les données que dans la mesure nécessaire à la fourniture de son service.",
+    "s6b": "Quelques prestataires de confiance font tourner le site : Vercel (hébergement), Resend (e-mails transactionnels), Telegram (notification des leads), un prestataire d'IA tiers (la démo en direct) et Plausible (analytique). Chacun ne traite les données que dans la mesure nécessaire à son service.",
     "s7h": "Combien de temps je les conserve",
     "s7b": "Les briefs et échanges par e-mail ne sont conservés que le temps nécessaire au traitement de votre demande et de tout projet qui en découle, puis supprimés. Vous pouvez me demander de les supprimer plus tôt à tout moment.",
     "s8h": "Vos droits",

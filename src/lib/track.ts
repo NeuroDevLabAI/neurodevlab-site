@@ -3,9 +3,12 @@
  * (e.g. analytics disabled, dev, or blocked).
  *
  * Canonical goal names (create these exactly in the Plausible dashboard):
- *   cta_brief · click_calendly · form_submit · locale_switch ·
- *   exit_intent_shown · scroll_50 · scroll_90 · time_on_page_30s ·
- *   calc_used · demo_used · demo_cta · faq_open
+ * Funnel goals (LAB) — create these exactly in Plausible:
+ *   cta_principal_clique · appel_clique · brief_soumis ·
+ *   calculateur_utilise · demo_lancee
+ * Supporting goals:
+ *   demo_cta · faq_open · locale_switch · exit_intent_shown ·
+ *   scroll_50 · scroll_90 · time_on_page_30s
  */
 type Props = Record<string, string | number | boolean>;
 

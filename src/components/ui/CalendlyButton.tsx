@@ -16,7 +16,7 @@ const styles: Record<Variant, string> = {
 
 /**
  * The single, repeated primary CTA. Opens the Calendly booking page and fires
- * the `click_calendly` Plausible goal (tagged with locale + source) so every
+ * the `appel_clique` Plausible goal (tagged with locale + source) so every
  * placement is measured. Keyboard + screen-reader friendly.
  */
 export function CalendlyButton({
@@ -39,7 +39,7 @@ export function CalendlyButton({
       target="_blank"
       rel="noopener noreferrer"
       data-source={source}
-      onClick={() => track("click_calendly", { source, locale })}
+      onClick={() => track("appel_clique", { source, locale })}
       className={cn(
         "group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[15px] font-medium transition-[transform,background-color,border-color] duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2",
         styles[variant],

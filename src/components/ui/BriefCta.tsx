@@ -18,7 +18,7 @@ const styles: Record<Variant, string> = {
 /**
  * Primary, async-first CTA — routes to the structured brief (/contact) instead
  * of opening Calendly. Calendly is now the discreet *secondary* path. Fires the
- * `cta_brief` Plausible goal (tagged with source + locale) so every placement is
+ * `cta_principal_clique` Plausible goal (tagged with source + locale) so every placement is
  * measured. Optional "magnetic" pull toward the cursor on desktop, hard-gated by
  * prefers-reduced-motion and a fine pointer (WCAG 2.3.3; never on touch).
  */
@@ -78,7 +78,7 @@ export function BriefCta({
         href={href}
         data-source={source}
         onClick={() => {
-          track("cta_brief", { source, locale });
+          track("cta_principal_clique", { source, locale });
           onClick?.();
         }}
         className={cn(

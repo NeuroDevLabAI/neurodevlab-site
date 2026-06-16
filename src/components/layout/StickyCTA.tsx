@@ -18,7 +18,7 @@ export function StickyCTA({ label }: { label: string }) {
   return (
     <div
       className={cn(
-        "fixed inset-x-0 bottom-0 z-40 border-t border-border bg-bg/85 p-3 backdrop-blur-md transition-transform duration-300 ease-out md:hidden",
+        "fixed inset-x-0 bottom-0 z-40 border-t border-border bg-bg/85 px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-md transition-transform duration-300 ease-out md:hidden",
         show ? "translate-y-0" : "translate-y-full",
       )}
     >
