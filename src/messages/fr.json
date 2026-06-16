@@ -1,12 +1,16 @@
 {
   "Meta": {
     "homeTitle": "NeuroDevLab — Automatisations IA, bots & intégrations",
-    "homeDescription": "J'automatise ce qui vous ralentit. Automatisations IA, bots et intégrations pour PME et fondateurs — livrés en jours, pas en mois. Basé à Lausanne, Suisse.",
+    "homeDescription": "J'automatise ce qui vous ralentit. Automatisations, bots et intégrations propulsés par l'IA pour PME et fondateurs — livrés en jours, pas en mois. Basé à Lausanne, Suisse.",
     "servicesTitle": "Services — Automatisation IA & intégrations | NeuroDevLab",
-    "servicesDescription": "Du script Python ponctuel à une véritable équipe IA : automatisations, intégrations d'API, bots Telegram & Discord, web scraping et applications web modernes. Livré en jours.",
-    "contactTitle": "Contact — Réservez un appel gratuit | NeuroDevLab",
-    "contactDescription": "Réservez un appel gratuit de 30 minutes ou envoyez un message. Automatisation IA pour PME et fondateurs en Suisse et en Europe. Réponse généralement en 2 heures.",
-    "ogTagline": "Automatisations IA, bots & intégrations — livrés en jours, pas en mois."
+    "servicesDescription": "Du simple script Python ponctuel à une véritable force de travail IA : automatisations, intégrations d'API, bots Telegram & Discord, web scraping et applications web modernes. Livrés en jours.",
+    "contactTitle": "Envoyez votre brief — une proposition sur mesure en 24h | NeuroDevLab",
+    "contactDescription": "Dites-moi ce qui vous ralentit. Je réponds sous ~2 heures avec une proposition d'automatisation sur mesure en 24h. Ou réservez un appel gratuit de 30 min. Lausanne, Suisse.",
+    "ogTagline": "Automatisations IA, bots & intégrations — livrés en jours, pas en mois.",
+    "legalNoticeTitle": "Mentions légales | NeuroDevLab",
+    "legalNoticeDescription": "Mentions légales et informations sur l'éditeur de NeuroDevLab, Lausanne, Suisse.",
+    "privacyTitle": "Politique de confidentialité | NeuroDevLab",
+    "privacyDescription": "Comment NeuroDevLab traite vos données personnelles — conforme au RGPD et à la nLPD suisse. Analytique sans cookies, aucun pistage intrusif."
   },
   "Nav": {
     "home": "Accueil",
@@ -17,66 +21,202 @@
     "closeMenu": "Fermer le menu",
     "skip": "Aller au contenu"
   },
+  "Cta": {
+    "primary": "Décrivez votre besoin → proposition en 24h",
+    "primaryShort": "Envoyez votre brief",
+    "micro": "Gratuit, sans engagement — une proposition sur mesure en 24h.",
+    "secondary": "Vous préférez en parler ? Réservez un appel",
+    "secondaryShort": "Réserver un appel"
+  },
   "Availability": {
     "open": "Disponible pour de nouveaux projets",
-    "closed": "Complet pour le moment",
+    "closed": "Capacité actuellement complète",
     "accepting": "J'accepte actuellement {count} nouveaux clients"
   },
   "Hero": {
     "headlineLead": "J'automatise ce qui vous ralentit.",
     "headlineResult": "Économisez 15h/semaine et 3'000 CHF/mois.",
-    "subheadline": "Automatisations IA, bots et intégrations — livrés en jours, pas en mois.",
-    "cta": "Réserver un appel gratuit de 30 min",
-    "ctaMicro": "Gratuit, sans engagement.",
+    "subheadline": "Automatisations, bots et intégrations propulsés par l'IA — livrés en jours, pas en mois.",
     "location": "Basé à Lausanne, Suisse",
-    "responseTime": "Répond généralement en 2 heures"
+    "responseTime": "Répond généralement sous 2 heures"
   },
-  "Stats": {
-    "missions": "Missions livrées",
-    "clients": "Clients satisfaits",
-    "technologies": "Technologies maîtrisées",
-    "availability": "Disponibilité",
-    "availabilityValue": "24/7"
+  "Capabilities": {
+    "sourcing": "Sourcing",
+    "delivery": "Livraison",
+    "learning": "Apprentissage",
+    "security": "Sécurité",
+    "integrations": "Intégrations",
+    "automation": "Automatisation"
+  },
+  "TrustSignals": {
+    "title": "Ce qui est réellement vérifiable aujourd'hui",
+    "subtitle": "Pas de logos gonflés, pas de faux témoignages — juste la vérité, le temps que les études de cas s'accumulent.",
+    "github": "Code ouvert sur GitHub",
+    "githubDesc": "Dépôts publics sous NeuroDevLabAI.",
+    "location": "Basé à Lausanne, Suisse",
+    "locationDesc": "Établi en Suisse, actif dans toute l'Europe.",
+    "response": "Réponse sous ~2 heures",
+    "responseDesc": "Priorité à l'asynchrone — votre brief reçoit une réponse humaine et rapide.",
+    "privacy": "Conforme au RGPD et à la nLPD suisse",
+    "privacyDesc": "Analytique sans cookies, aucun pistage intrusif.",
+    "production": "Automatisations en production 24/7",
+    "productionDesc": "Mes propres systèmes tournent en continu — pas une simple présentation.",
+    "tech": "{count}+ technologies maîtrisées"
   },
   "Services": {
     "eyebrow": "Ce que je fais",
-    "title": "Une automatisation qui se rembourse",
-    "subtitle": "Du script ponctuel à une équipe IA complète — conçue pour tourner sans vous.",
+    "title": "Une automatisation qui se rentabilise",
+    "subtitle": "Du script ponctuel à une véritable force de travail IA — conçu pour tourner sans vous.",
     "learnMore": "Voir tous les services",
-    "automations": { "title": "Automatisations IA", "desc": "Des workflows n8n, Make et Zapier qui tournent pendant que vous dormez." },
-    "integrations": { "title": "Intégrations d'API", "desc": "Connectez n'importe quel outil à un autre — Stripe, Shopify, Notion et plus." },
-    "bots": { "title": "Bots Telegram & Discord", "desc": "Des bots sur mesure pour le support, les notifications et les commandes." },
-    "scraping": { "title": "Web Scraping & données", "desc": "Extrayez et transformez les données de n'importe quel site, automatiquement." },
-    "scripts": { "title": "Scripts Python & automatisation", "desc": "Des scripts sur mesure qui éliminent les tâches manuelles répétitives." },
-    "webapps": { "title": "Applications web modernes", "desc": "Des applis rapides et élégantes en Next.js et React." }
+    "automations": {
+      "title": "Automatisations IA",
+      "desc": "Des workflows n8n, Make et Zapier qui tournent pendant que vous dormez."
+    },
+    "integrations": {
+      "title": "Intégrations d'API",
+      "desc": "Connectez n'importe quel outil à un autre — Stripe, Shopify, Notion et plus encore."
+    },
+    "bots": {
+      "title": "Bots Telegram & Discord",
+      "desc": "Des bots sur mesure qui gèrent le support, les notifications et les commandes."
+    },
+    "scraping": {
+      "title": "Web scraping & données",
+      "desc": "Extrayez et transformez automatiquement les données de n'importe quel site web."
+    },
+    "scripts": {
+      "title": "Scripts Python & automatisation",
+      "desc": "Des scripts sur mesure qui éliminent les tâches manuelles répétitives."
+    },
+    "webapps": {
+      "title": "Applications web modernes",
+      "desc": "Des applications web rapides et soignées, conçues avec Next.js et React."
+    }
+  },
+  "BeforeAfter": {
+    "eyebrow": "Avant / après",
+    "title": "De l'heure passée à cliquer à l'instantané et automatique",
+    "subtitle": "Même tâche. L'une dépend de votre temps. L'autre tourne toute seule.",
+    "manualLabel": "Manuel, aujourd'hui",
+    "autoLabel": "Automatisé avec NeuroDevLab",
+    "manualStep1": "Ouvrir les onglets",
+    "manualStep2": "Copier-coller les données",
+    "manualStep3": "Corriger les erreurs",
+    "manualStep4": "Envoyer le rapport",
+    "manualStep5": "Tout recommencer demain",
+    "autoStep1": "Ça tourne selon le planning",
+    "autoStep2": "Terminé — rapport livré",
+    "manualTime": "~45 min, chaque jour",
+    "autoTime": "0 min — tourne 24/7",
+    "replay": "Rejouer"
+  },
+  "Calculator": {
+    "eyebrow": "Calculateur d'économies",
+    "title": "Voyez ce que l'automatisation vous fait économiser",
+    "subtitle": "Bougez les curseurs — les chiffres se mettent à jour en direct, en CHF.",
+    "tasksLabel": "Tâches répétitives par semaine",
+    "minutesLabel": "Minutes par tâche",
+    "rateLabel": "Coût horaire (CHF)",
+    "rateHint": "Le coût total de la personne qui effectue le travail.",
+    "resultHours": "Heures économisées / mois",
+    "resultMonth": "CHF économisés / mois",
+    "resultYear": "CHF économisés / an",
+    "roi": "Retour la première année",
+    "roiSuffix": "× le coût d'une automatisation Express",
+    "roiCapped": "Hors normes",
+    "cta": "Automatiser ceci",
+    "disclaimer": "Estimation seulement — vos chiffres réels sont cadrés sur le brief. Base : 4,33 semaines/mois.",
+    "srSummary": "Économies estimées : {hours} heures et {month} CHF par mois."
+  },
+  "AiDemo": {
+    "eyebrow": "Démo IA en direct",
+    "title": "Décrivez une tâche. Voyez comment je l'automatiserais.",
+    "subtitle": "Saisissez une tâche répétitive de votre activité et obtenez un aperçu d'automatisation instantané — généré par Claude, exécuté sur mon serveur.",
+    "placeholder": "ex. Chaque matin, je copie les nouvelles commandes depuis ma messagerie vers un tableur…",
+    "send": "Obtenir l'idée d'automatisation",
+    "sending": "Réflexion…",
+    "exampleLabel": "Ou essayez un exemple",
+    "example1": "Trier les e-mails entrants par sujet",
+    "example2": "Récupérer les prix des concurrents chaque jour",
+    "example3": "Répondre automatiquement aux demandes de réservation",
+    "ctaAfter": "Concrétisez-le → envoyez votre brief",
+    "disclaimer": "Un aperçu rapide, pas une proposition ferme — votre plan réel est cadré sur le brief.",
+    "errorBusy": "Beaucoup de requêtes en ce moment. Réessayez dans une minute, ou envoyez simplement votre brief.",
+    "errorGeneric": "La démo fait une petite pause. Envoyez votre brief et je vous répondrai personnellement.",
+    "poweredBy": "Généré par IA · Claude sur le serveur · rien n'est conservé",
+    "inputLabel": "Décrivez une tâche répétitive"
+  },
+  "Pricing": {
+    "eyebrow": "Tarifs",
+    "title": "Tarifs de lancement, transparents dès le premier jour",
+    "subtitle": "Projets à périmètre fixe ou forfait mensuel. Toujours en CHF, sans frais cachés.",
+    "from": "dès",
+    "perMonth": "/ mois",
+    "quotePrefix": "sur devis",
+    "cta": "Obtenir un devis sur mesure",
+    "popular": "Le plus populaire",
+    "express": {
+      "name": "Automatisation Express",
+      "desc": "Un workflow clé en main, livré rapidement."
+    },
+    "system": {
+      "name": "Système automatisé",
+      "desc": "Multi-étapes, 2–3 intégrations (CRM, e-mail…)."
+    },
+    "custom": {
+      "name": "Sur mesure",
+      "desc": "Complexe, multi-agents, entièrement personnalisé."
+    },
+    "maintenance": {
+      "name": "Maintenance & évolution",
+      "desc": "Forfait mensuel — surveillance + optimisation continue."
+    }
+  },
+  "Guarantee": {
+    "label": "Ma garantie",
+    "text": "Premier workflow livré en 5 jours — ou vous êtes remboursé."
+  },
+  "HowIWork": {
+    "eyebrow": "Comment je travaille",
+    "title": "Simple, rapide, transparent",
+    "subtitle": "De votre brief à un système qui tourne sans vous — sans jargon, sans surprises.",
+    "step1Title": "Vous envoyez un brief",
+    "step1Desc": "Décrivez ce qui vous ralentit. Je réponds sous ~2h avec une proposition sur mesure — sous 24h au plus tard.",
+    "step2Title": "Je construis en quelques jours",
+    "step2Desc": "Je cadre, je construis, je teste et je documente — avec des points d'avancement tout du long.",
+    "step3Title": "Ça part en production & vous mesurez",
+    "step3Desc": "Ça tourne tout seul, et vous voyez exactement le temps et l'argent économisés."
+  },
+  "Faq": {
+    "eyebrow": "FAQ",
+    "title": "Vos questions, nos réponses",
+    "subtitle": "Tout ce que vous demanderiez lors d'un premier appel — déjà répondu.",
+    "q1": "En combien de temps pouvez-vous livrer ?",
+    "a1": "La plupart des projets sont livrés en quelques jours à deux semaines. Votre premier workflow est garanti en production sous 5 jours — ou vous êtes remboursé.",
+    "q2": "Comment ça se passe, du début à la fin ?",
+    "a2": "Vous envoyez un bref brief. Je réponds sous ~2 heures avec une proposition sur mesure (24h au plus tard). Une fois que tout vous convient, je construis, teste et documente — puis je vous remets le tout.",
+    "q3": "À qui appartient le code ?",
+    "a3": "À vous — à 100 %. Code, comptes et identifiants vous appartiennent, entièrement documentés. Aucune dépendance, aucune boîte noire.",
+    "q4": "Mes données sont-elles confidentielles ?",
+    "a4": "Oui. Vos données restent les vôtres. Je suis conforme au RGPD et à la nLPD suisse, je signe un NDA sur demande, et je ne partage ni ne revends jamais rien.",
+    "q5": "Et la maintenance ensuite ?",
+    "a5": "En option. Un forfait mensuel (dès 150 CHF/mois) couvre la surveillance, les correctifs et les améliorations. Ou prenez les clés et gérez-le vous-même."
   },
   "Founder": {
     "eyebrow": "Le fondateur",
     "name": "Loan Schoch",
     "role": "Fondateur",
-    "bio": "Je suis Loan, développeur de 22 ans basé à Lausanne. Je construis des systèmes d'automatisation IA qui travaillent 24h/24 à votre place."
-  },
-  "CaseStudies": {
-    "eyebrow": "Preuves",
-    "title": "Études de cas",
-    "subtitle": "De vrais chiffres issus de vraies livraisons — publiés le jour où chaque mission est livrée.",
-    "comingSoon": "Bientôt",
-    "comingSoonDesc": "La première étude de cas arrive dès la première mission livrée.",
-    "metricLabel": "Résultat"
-  },
-  "SocialProof": {
-    "title": "La confiance de fondateurs et de PME en Suisse et en Europe",
-    "subtitle": "Logos et témoignages apparaîtront ici automatiquement à mesure des livraisons."
+    "bio": "Je suis Loan, développeur de 22 ans basé à Lausanne, en Suisse. Je conçois des systèmes d'automatisation IA qui travaillent 24/7 pour que vous n'ayez plus à le faire."
   },
   "FinalCta": {
-    "title": "Prêt à automatiser votre business ?",
-    "subtitle": "Réservez un appel gratuit de 30 minutes. On trouvera un workflow à automatiser cette semaine — sans engagement.",
-    "cta": "Réservez votre appel gratuit"
+    "title": "Prêt à automatiser ce qui vous ralentit ?",
+    "subtitle": "Envoyez un bref brief — recevez une proposition sur mesure en 24h. Sans engagement, sans pression."
   },
   "Footer": {
     "tagline": "Automatisations IA, bots et intégrations, depuis Lausanne.",
     "navHeading": "Navigation",
     "contactHeading": "Contact",
+    "legalHeading": "Légal",
     "location": "Lausanne, Suisse",
     "rights": "Tous droits réservés.",
     "neuro": "NEURO — ça apprend.",
@@ -84,81 +224,150 @@
     "lab": "LAB — tout est mesurable."
   },
   "Contact": {
-    "eyebrow": "Discutons",
-    "title": "Réservez un appel ou envoyez un message",
-    "subtitle": "Choisissez un créneau qui vous convient — ou écrivez quelques lignes, je réponds en ~2 heures.",
-    "calendlyTitle": "Réserver un appel gratuit de 30 min",
+    "eyebrow": "Votre brief",
+    "title": "Envoyez votre brief — proposition en 24h",
+    "subtitle": "Dites-moi ce qui vous ralentit. Je réponds sous ~2 heures, avec une proposition sur mesure en 24h.",
+    "calendlyTitle": "Réservez un appel gratuit de 30 min",
     "calendlyOpen": "Ouvrir le calendrier dans un nouvel onglet",
     "calendlyFallback": "Le calendrier ne se charge pas ?",
-    "formHeading": "Vous préférez écrire ?",
+    "formHeading": "Décrivez votre besoin",
+    "secondaryHeading": "Vous préférez d'abord en parler ?",
+    "secondarySubtitle": "Réservez plutôt un appel gratuit de 30 minutes — rare, mais toujours bienvenu.",
     "name": "Nom",
-    "namePlaceholder": "Jean Dupont",
+    "namePlaceholder": "Jeanne Dupont",
     "email": "E-mail",
-    "emailPlaceholder": "jean@entreprise.com",
-    "message": "Message",
-    "messagePlaceholder": "Qu'aimeriez-vous automatiser ?",
-    "send": "Envoyer le message",
+    "emailPlaceholder": "jeanne@entreprise.com",
+    "message": "Que souhaitez-vous automatiser ?",
+    "messagePlaceholder": "Décrivez la tâche ou le workflow répétitif dont vous voulez vous débarrasser…",
+    "projectType": "Type de projet",
+    "projectTypeOptional": "optionnel",
+    "projectTypeChoose": "Choisir…",
+    "projectTypeAutomation": "Automatisation / workflow",
+    "projectTypeIntegration": "Intégration d'API",
+    "projectTypeBot": "Bot (Telegram / Discord)",
+    "projectTypeScraping": "Web scraping / données",
+    "projectTypeWebapp": "Application web",
+    "projectTypeOther": "Autre chose",
+    "budget": "Budget",
+    "budgetOptional": "optionnel",
+    "budgetChoose": "Choisir…",
+    "budgetLt500": "Moins de 500 CHF",
+    "budget500": "500 – 1'500 CHF",
+    "budget1500": "1'500 – 3'500 CHF",
+    "budgetGt3500": "Plus de 3'500 CHF",
+    "budgetUnsure": "Pas encore sûr",
+    "volume": "Volume / fréquence",
+    "volumeOptional": "optionnel",
+    "volumePlaceholder": "ex. ~200 commandes/jour, un rapport chaque matin…",
+    "send": "Envoyer mon brief",
     "sending": "Envoi…",
-    "success": "Merci ! Votre message est parti — je vous réponds d'ici ~2 heures.",
-    "error": "Une erreur est survenue. Réessayez, ou réservez plutôt un appel.",
-    "rateLimited": "Trop de messages depuis cette adresse. Réessayez plus tard ou réservez un appel.",
-    "validation": "Ajoutez votre nom, un e-mail valide et un court message."
+    "success": "C'est noté ! Votre brief est en route — je réponds sous ~2 heures, avec une proposition sur mesure en 24h.",
+    "error": "Une erreur s'est produite. Veuillez réessayer, ou réservez plutôt un appel.",
+    "rateLimited": "Trop de messages depuis cette adresse. Veuillez réessayer plus tard ou réserver un appel.",
+    "validation": "Veuillez indiquer votre nom, un e-mail valide et une brève description."
   },
   "ServicesPage": {
     "eyebrow": "Services",
     "title": "L'automatisation, de bout en bout",
-    "subtitle": "Un développeur, une équipe IA. Je cadre lors d'un appel, je construis en jours, et je vous livre quelque chose qui tourne tout seul.",
+    "subtitle": "Un développeur, une force de travail IA. Je cadre sur un brief, je construis en jours, et je vous remets quelque chose qui tourne tout seul.",
     "outcomeLabel": "Résultat",
     "automations": {
       "title": "Automatisations IA",
-      "long": "Des workflows qui relient vos applis et font le travail ennuyeux à votre place — chaque heure, chaque jour, sans que personne ne clique.",
+      "long": "Des workflows qui relient vos applications et font le travail ennuyeux à votre place — chaque heure, chaque jour, sans que personne ne clique sur un bouton.",
       "outcome": "Des heures de travail manuel supprimées chaque semaine."
     },
     "integrations": {
       "title": "Intégrations d'API",
-      "long": "Stripe, Shopify, Notion, HubSpot, Google — je relie vos outils pour que les données circulent automatiquement au lieu d'être copiées-collées.",
+      "long": "Stripe, Shopify, Notion, HubSpot, Google — je relie vos outils entre eux pour que les données circulent automatiquement au lieu d'être copiées-collées.",
       "outcome": "Une seule source de vérité, zéro double saisie."
     },
     "bots": {
       "title": "Bots Telegram & Discord",
-      "long": "Des bots qui répondent aux clients, envoient des notifications et exécutent des commandes — disponibles 24/7 avec la logique exacte de votre activité.",
+      "long": "Des bots qui répondent aux clients, envoient des notifications et exécutent des commandes — disponibles 24/7 avec exactement la logique dont votre activité a besoin.",
       "outcome": "Des réponses instantanées, jour et nuit."
     },
     "scraping": {
-      "title": "Web Scraping & données",
-      "long": "Collectez, nettoyez et structurez les données de n'importe quel site, de façon planifiée, livrées dans votre feuille, base de données ou dashboard.",
-      "outcome": "Des données fraîches et structurées, en pilote automatique."
+      "title": "Web scraping & données",
+      "long": "Collectez, nettoyez et structurez les données de n'importe quel site web selon un planning, livrées directement dans votre feuille, votre base de données ou votre tableau de bord.",
+      "outcome": "Des données fraîches et structurées en pilote automatique."
     },
     "scripts": {
       "title": "Scripts Python & automatisation",
-      "long": "Des scripts sur mesure qui éliminent une tâche répétitive précise — rapports, traitement de fichiers, rapprochements, traitements par lot.",
+      "long": "Des scripts sur mesure qui éliminent une tâche répétitive précise — rapports, traitement de fichiers, rapprochements, traitements par lots.",
       "outcome": "La tâche que vous redoutez, faite en quelques secondes."
     },
     "webapps": {
       "title": "Applications web modernes",
-      "long": "Des applis web rapides et accessibles en Next.js et React — dashboards, outils internes et produits orientés clients.",
-      "outcome": "Un produit qui se charge instantanément et qui scale."
+      "long": "Des applications web rapides et accessibles, conçues avec Next.js et React — tableaux de bord, outils internes et produits orientés client.",
+      "outcome": "Un produit qui se charge instantanément et qui passe à l'échelle."
     },
     "processTitle": "Comment ça marche",
     "processSubtitle": "Simple, rapide, et conçu pour tourner sans vous.",
-    "step1Title": "Appel gratuit",
-    "step1Desc": "On identifie ce qui vous ralentit et on choisit le workflow à plus fort impact à automatiser en premier.",
-    "step2Title": "Construit en jours",
-    "step2Desc": "Je construis, je teste et je documente — vous recevez des points d'avancement tout du long.",
+    "step1Title": "Brief gratuit",
+    "step1Desc": "Nous identifions ce qui vous ralentit et choisissons le workflow à plus fort impact à automatiser en premier.",
+    "step2Title": "Construction en quelques jours",
+    "step2Desc": "Je construis, teste et documente — vous recevez des points d'avancement tout du long.",
     "step3Title": "Livraison & mesure",
     "step3Desc": "Ça part en production, ça tourne, et vous voyez exactement le temps et l'argent économisés."
+  },
+  "Legal": {
+    "noticeLink": "Mentions légales",
+    "privacyLink": "Politique de confidentialité",
+    "updated": "Dernière mise à jour : 16 juin 2026",
+    "contactHeading": "Des questions sur vos données ?",
+    "contactBody": "Contactez-moi à tout moment à",
+    "backHome": "Retour à l'accueil"
+  },
+  "LegalNotice": {
+    "title": "Mentions légales",
+    "s1h": "Éditeur",
+    "s1b": "NeuroDevLab — une activité indépendante exploitée par Loan Schoch, basée à Lausanne, Suisse.",
+    "s2h": "Contact",
+    "s2b": "Par e-mail (voir ci-dessous) — réponse généralement sous ~2 heures.",
+    "s3h": "Hébergement",
+    "s3b": "Ce site est hébergé par Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA (vercel.com).",
+    "s4h": "Propriété intellectuelle",
+    "s4b": "Sauf mention contraire, l'ensemble des contenus, du code et des visuels de ce site sont la propriété de NeuroDevLab. Toute reproduction sans autorisation est interdite.",
+    "s5h": "Responsabilité",
+    "s5b": "Les informations sont fournies de bonne foi, mais sans garantie d'exhaustivité ni d'exactitude. Les liens externes échappent à mon contrôle et je ne suis pas responsable de leur contenu.",
+    "s6h": "Droit applicable",
+    "s6b": "Ce site est régi par le droit suisse. For juridique : Lausanne, Suisse.",
+    "s7h": "Protection des données",
+    "s7b": "Consultez la Politique de confidentialité pour savoir comment les données personnelles sont collectées et traitées (RGPD + nLPD suisse)."
+  },
+  "LegalPrivacy": {
+    "title": "Politique de confidentialité",
+    "intro": "Votre vie privée compte. En tant que prestataire établi en Suisse, j'applique à la fois le Règlement général de l'UE sur la protection des données (RGPD) et la loi fédérale suisse sur la protection des données (nLPD / FADP). Cette page explique, en langage clair, ce que je collecte et pourquoi.",
+    "s1h": "Qui est responsable",
+    "s1b": "NeuroDevLab — Loan Schoch, Lausanne, Suisse. Je suis le responsable du traitement des données pour ce site. Mes coordonnées figurent en bas de cette page.",
+    "s2h": "Quelles données je collecte",
+    "s2b": "Uniquement ce que vous me transmettez : lorsque vous envoyez un brief ou un message, je collecte votre nom, votre e-mail, votre description, ainsi que les champs optionnels type de projet, budget et volume. Je ne collecte aucune donnée que vous ne soumettez pas activement.",
+    "s3h": "Pourquoi je les collecte (base légale)",
+    "s3b": "Pour vous répondre et préparer une proposition — c'est-à-dire votre consentement et les démarches précontractuelles effectuées à votre demande. Je ne vends ni ne loue jamais vos données, et je ne les utilise pas à des fins marketing sans rapport.",
+    "s4h": "La démo IA en direct",
+    "s4b": "Le texte que vous saisissez dans la démo en direct est envoyé à Anthropic (Claude) pour générer une réponse. Merci de ne pas y coller d'informations personnelles ou confidentielles. Je ne conserve pas les conversations de la démo de mon côté.",
+    "s5h": "Analytique",
+    "s5b": "J'utilise Plausible Analytics — sans cookies et respectueux de la vie privée. Aucun cookie, aucun pistage inter-sites ; les données sont agrégées, anonymes et hébergées dans l'UE. Il n'y a rien à consentir puisque rien ne vous identifie.",
+    "s6h": "Les prestataires que j'utilise",
+    "s6b": "Quelques sous-traitants de confiance contribuent au fonctionnement du site : Vercel (hébergement), Resend (e-mails transactionnels), Telegram (notification des leads), Anthropic (la démo IA) et Plausible (analytique). Chacun ne traite les données que dans la mesure nécessaire à la fourniture de son service.",
+    "s7h": "Combien de temps je les conserve",
+    "s7b": "Les briefs et échanges par e-mail ne sont conservés que le temps nécessaire au traitement de votre demande et de tout projet qui en découle, puis supprimés. Vous pouvez me demander de les supprimer plus tôt à tout moment.",
+    "s8h": "Vos droits",
+    "s8b": "Vous pouvez accéder à vos données, les rectifier, les supprimer, en limiter le traitement, les transférer ou vous y opposer. Il vous suffit de m'écrire. Vous pouvez également déposer une réclamation auprès du Préposé fédéral suisse à la protection des données et à la transparence (PFPDT / FDPIC) ou de votre autorité de contrôle locale dans l'UE.",
+    "s9h": "Cookies",
+    "s9b": "Ce site ne dépose aucun cookie publicitaire ou de pistage. Seul le stockage technique strictement nécessaire est utilisé.",
+    "s10h": "Modifications",
+    "s10b": "Je peux mettre à jour cette politique au fil de l'évolution du site ; la date ci-dessus reflète toujours la dernière version."
   },
   "NotFound": {
     "code": "404",
     "title": "Cette page n'existe pas encore.",
-    "titleAccent": "Mais votre automatisation, oui.",
-    "home": "Retour à l'accueil",
-    "book": "Réserver un appel gratuit"
+    "titleAccent": "Mais votre automatisation, si.",
+    "home": "Retour à l'accueil"
   },
   "ExitIntent": {
     "title": "Avant de partir",
-    "message": "Réservez un appel gratuit pour voir si on est faits pour travailler ensemble — sans pitch, sans pression.",
-    "cta": "Réserver un appel rapide",
+    "message": "Envoyez un brief de 30 secondes et recevez une proposition sur mesure en 24h — sans argumentaire, sans pression.",
     "dismiss": "Non merci"
   },
   "Lang": {

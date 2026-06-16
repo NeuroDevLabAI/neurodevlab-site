@@ -5,8 +5,16 @@ import { useEffect, useRef } from "react";
 /**
  * Calm neural-graph hero motif: a sparse node cloud with near-neighbour edges,
  * ~6% of nodes pulsing as "active synapses", whole field parallaxing to the
- * cursor via eased lerp. Capped node count, pauses when off-screen, and renders
- * a single static frame under prefers-reduced-motion. Decorative (aria-hidden).
+ * cursor via eased lerp. Decorative (aria-hidden).
+ *
+ * Feature C — on desktop with motion, nodes near the cursor are gently *pulled*
+ * toward it and their edges stretch with them (attraction/connection). Hard-
+ * gated off for prefers-reduced-motion, coarse pointers and small screens, which
+ * get the calm static-ish field instead (the elegant fallback).
+ *
+ * P1 — pauses off-screen (IntersectionObserver), caps devicePixelRatio (1.5 on
+ * small screens), lowers node density on mobile, and renders a single static
+ * frame under prefers-reduced-motion.
  */
 export function NeuralBackground({ className }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -17,13 +25,16 @@ export function NeuralBackground({ className }: { className?: string }) {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const reduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const small = window.innerWidth < 700;
+    const fine = window.matchMedia("(pointer: fine)").matches;
+    const interactive = !reduced && fine && !small;
+    const dpr = Math.min(window.devicePixelRatio || 1, small ? 1.5 : 2);
 
     const ACCENT = "139,92,246";
     const BLUE = "56,189,248";
+    const ATTRACT_R = 135; // px radius of cursor influence
+    const ATTRACT_MAX = 16; // px max pull toward cursor
 
     type Node = {
       x: number;
@@ -41,6 +52,7 @@ export function NeuralBackground({ className }: { className?: string }) {
     let nodes: Node[] = [];
     let edges: Array<[number, number]> = [];
     const pointer = { x: 0, y: 0, tx: 0, ty: 0 };
+    const cursor = { x: 0, y: 0, inside: false };
     let raf = 0;
     let t = 0;
 
@@ -55,8 +67,9 @@ export function NeuralBackground({ className }: { className?: string }) {
       canvas!.height = Math.floor(height * dpr);
       ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      const capMax = dpr < 1.5 || width < 700 ? 70 : 115;
-      const count = Math.max(36, Math.min(capMax, Math.floor((width * height) / 14000)));
+      const capMax = dpr < 1.5 || width < 700 ? 60 : 110;
+      const divisor = small ? 20000 : 14000;
+      const count = Math.max(30, Math.min(capMax, Math.floor((width * height) / divisor)));
       nodes = Array.from({ length: count }, () => {
         const x = rand(0, width);
         const y = rand(0, height);
@@ -90,14 +103,27 @@ export function NeuralBackground({ className }: { className?: string }) {
       pointer.y += (pointer.ty - pointer.y) * 0.06;
       const ox = pointer.x;
       const oy = pointer.y;
+      const pull = interactive && cursor.inside;
 
       for (const n of nodes) {
+        let ax = 0;
+        let ay = 0;
+        if (pull) {
+          const dx = cursor.x - n.bx;
+          const dy = cursor.y - n.by;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d > 0.001 && d < ATTRACT_R) {
+            const f = (1 - d / ATTRACT_R) ** 2;
+            ax = (dx / d) * f * ATTRACT_MAX;
+            ay = (dy / d) * f * ATTRACT_MAX;
+          }
+        }
         if (reduced) {
           n.x = n.bx;
           n.y = n.by;
         } else {
-          n.x = n.bx + Math.sin(t * n.speed + n.phase) * 3;
-          n.y = n.by + Math.cos(t * n.speed + n.phase) * 3;
+          n.x = n.bx + Math.sin(t * n.speed + n.phase) * 3 + ax;
+          n.y = n.by + Math.cos(t * n.speed + n.phase) * 3 + ay;
         }
       }
 
@@ -141,8 +167,13 @@ export function NeuralBackground({ className }: { className?: string }) {
 
     function onPointer(e: PointerEvent) {
       const rect = canvas!.getBoundingClientRect();
-      pointer.tx = ((e.clientX - rect.left) / rect.width - 0.5) * 22;
-      pointer.ty = ((e.clientY - rect.top) / rect.height - 0.5) * 22;
+      const px = e.clientX - rect.left;
+      const py = e.clientY - rect.top;
+      pointer.tx = (px / rect.width - 0.5) * 22;
+      pointer.ty = (py / rect.height - 0.5) * 22;
+      cursor.x = px;
+      cursor.y = py;
+      cursor.inside = px >= 0 && px <= rect.width && py >= 0 && py <= rect.height;
     }
 
     // Defer the O(n^2) build + first paint off the hydration / LCP critical path.
@@ -190,13 +221,13 @@ export function NeuralBackground({ className }: { className?: string }) {
       { threshold: 0 },
     );
     io.observe(canvas);
-    window.addEventListener("pointermove", onPointer, { passive: true });
+    if (interactive) window.addEventListener("pointermove", onPointer, { passive: true });
 
     return () => {
       cancelStartup();
       ro.disconnect();
       io.disconnect();
-      window.removeEventListener("pointermove", onPointer);
+      if (interactive) window.removeEventListener("pointermove", onPointer);
       if (raf) cancelAnimationFrame(raf);
     };
   }, []);

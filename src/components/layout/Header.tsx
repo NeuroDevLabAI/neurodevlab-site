@@ -4,12 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/brand/Logo";
-import { CalendlyButton } from "@/components/ui/CalendlyButton";
+import { BriefCta } from "@/components/ui/BriefCta";
 import { LangSwitcher } from "./LangSwitcher";
 import { cn } from "@/lib/cn";
 
 export function Header() {
   const t = useTranslations("Nav");
+  const c = useTranslations("Cta");
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -57,7 +58,7 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
         scrolled || open
-          ? "border-b border-border bg-bg/80 backdrop-blur-md"
+          ? "border-b border-border/80 bg-bg/60 backdrop-blur-xl supports-[backdrop-filter]:bg-bg/50"
           : "border-b border-transparent",
       )}
     >
@@ -85,8 +86,8 @@ export function Header() {
           </ul>
           <div className="flex items-center gap-3">
             <LangSwitcher />
-            <CalendlyButton
-              label={t("book")}
+            <BriefCta
+              label={c("primaryShort")}
               source="header"
               arrow={false}
               className="px-5 py-2 text-sm"
@@ -133,7 +134,7 @@ export function Header() {
               </Link>
             ))}
             <div className="pt-3">
-              <CalendlyButton label={t("book")} source="mobile_menu" className="w-full" />
+              <BriefCta label={c("primaryShort")} source="mobile_menu" className="w-full" />
             </div>
           </div>
         </div>

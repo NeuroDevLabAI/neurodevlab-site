@@ -2,7 +2,13 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/config";
 
-const PATHS = ["", "/services", "/contact"] as const;
+const PATHS = [
+  "",
+  "/services",
+  "/contact",
+  "/legal/notice",
+  "/legal/privacy",
+] as const;
 
 function urlFor(locale: string, path: string) {
   const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;

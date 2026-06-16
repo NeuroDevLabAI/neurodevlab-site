@@ -1,10 +1,13 @@
 import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/motion/Reveal";
+import { BriefCta } from "@/components/ui/BriefCta";
 import { CalendlyButton } from "@/components/ui/CalendlyButton";
 
 export async function FinalCta() {
   const t = await getTranslations("FinalCta");
+  const c = await getTranslations("Cta");
+  const g = await getTranslations("Guarantee");
 
   return (
     <section className="relative z-10">
@@ -23,9 +26,28 @@ export async function FinalCta() {
               {t("title")}
             </h2>
             <p className="mx-auto mt-4 max-w-md text-muted">{t("subtitle")}</p>
-            <div className="mt-9 flex justify-center">
-              <CalendlyButton label={t("cta")} source="final_cta" />
+            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <BriefCta label={c("primary")} source="final_cta" magnetic />
+              <CalendlyButton
+                label={c("secondary")}
+                source="final_cta_secondary"
+                variant="secondary"
+                arrow={false}
+                className="px-5 py-2.5 text-sm"
+              />
             </div>
+            <p className="mx-auto mt-6 inline-flex items-center gap-2 text-sm text-subtle">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinejoin="round"
+                />
+                <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              {g("text")}
+            </p>
           </div>
         </Reveal>
       </Container>

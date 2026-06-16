@@ -22,8 +22,8 @@ export async function Services() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICE_KEYS.map((key, i) => (
             <Reveal key={key} delay={i * 0.06} className="h-full">
-              <article className="group h-full rounded-2xl border border-border bg-surface p-6 transition-[transform,border-color,background-color] duration-200 ease-out hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface-2">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-bg-elevated text-accent">
+              <article className="group h-full rounded-2xl border border-border bg-surface p-6 transition-[transform,border-color,background-color,box-shadow] duration-200 ease-out hover:-translate-y-0.5 hover:border-accent/40 hover:bg-surface-2 hover:shadow-[0_12px_44px_-16px_rgba(139,92,246,0.45)]">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-bg-elevated text-accent transition-colors duration-200 group-hover:border-accent/40">
                   <ServiceIcon name={key} className="h-5 w-5" />
                 </span>
                 <h3 className="mt-5 text-lg font-medium text-fg">

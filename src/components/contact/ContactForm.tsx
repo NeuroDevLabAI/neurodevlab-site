@@ -3,10 +3,14 @@
 import { useState, type FormEvent } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { track } from "@/lib/track";
+import {
+  EMAIL_RE,
+  PROJECT_TYPE_OPTIONS,
+  BUDGET_OPTIONS,
+} from "@/lib/brief";
 
 type Status = "idle" | "sending" | "success" | "error" | "rate" | "invalid";
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const inputClass =
   "w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-fg placeholder:text-subtle outline-none transition-colors focus:border-accent-2";
 
@@ -22,6 +26,9 @@ export function ContactForm() {
     const name = String(data.get("name") || "").trim();
     const email = String(data.get("email") || "").trim();
     const message = String(data.get("message") || "").trim();
+    const projectType = String(data.get("projectType") || "");
+    const budget = String(data.get("budget") || "");
+    const volume = String(data.get("volume") || "").trim();
     const honeypot = String(data.get("company_url") || "");
 
     // Bot caught by honeypot → pretend success, send nothing.
@@ -53,7 +60,16 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message, locale, company_url: honeypot }),
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          projectType,
+          budget,
+          volume,
+          locale,
+          company_url: honeypot,
+        }),
       });
       if (res.ok) {
         setStatus("success");
@@ -139,6 +155,64 @@ export function ContactForm() {
           aria-invalid={status === "invalid" || undefined}
           aria-describedby={status === "invalid" ? "form-error" : undefined}
           className={`${inputClass} resize-y`}
+        />
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label htmlFor="projectType" className="mb-1.5 block text-sm font-medium text-muted">
+            {t("projectType")}{" "}
+            <span className="text-subtle">({t("projectTypeOptional")})</span>
+          </label>
+          <select
+            id="projectType"
+            name="projectType"
+            defaultValue=""
+            className={`${inputClass} appearance-none`}
+          >
+            <option value="">{t("projectTypeChoose")}</option>
+            {PROJECT_TYPE_OPTIONS.map((o) => (
+              <option key={o.value} value={o.value}>
+                {t(o.labelKey)}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="budget" className="mb-1.5 block text-sm font-medium text-muted">
+            {t("budget")}{" "}
+            <span className="text-subtle">({t("budgetOptional")})</span>
+          </label>
+          <select
+            id="budget"
+            name="budget"
+            defaultValue=""
+            className={`${inputClass} appearance-none`}
+          >
+            <option value="">{t("budgetChoose")}</option>
+            {BUDGET_OPTIONS.map((o) => (
+              <option key={o.value} value={o.value}>
+                {t(o.labelKey)}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label htmlFor="volume" className="mb-1.5 block text-sm font-medium text-muted">
+          {t("volume")}{" "}
+          <span className="text-subtle">({t("volumeOptional")})</span>
+        </label>
+        <input
+          id="volume"
+          name="volume"
+          type="text"
+          maxLength={300}
+          autoComplete="off"
+          placeholder={t("volumePlaceholder")}
+          className={inputClass}
         />
       </div>
 

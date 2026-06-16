@@ -87,6 +87,7 @@ export default async function LocaleLayout({
 
   const nav = await getTranslations("Nav");
   const meta = await getTranslations("Meta");
+  const cta = await getTranslations("Cta");
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -145,7 +146,7 @@ export default async function LocaleLayout({
           <Header />
           <main id="main">{children}</main>
           <Footer />
-          <StickyCTA label={nav("book")} />
+          <StickyCTA label={cta("primaryShort")} />
           <ExitIntent />
           <ScrollTracking />
         </NextIntlClientProvider>

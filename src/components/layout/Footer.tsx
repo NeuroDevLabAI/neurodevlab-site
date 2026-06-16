@@ -7,6 +7,7 @@ import { CONTACT_EMAIL, GITHUB_URL, LOCATION } from "@/lib/config";
 export async function Footer() {
   const t = await getTranslations("Footer");
   const nav = await getTranslations("Nav");
+  const legal = await getTranslations("Legal");
   const year = new Date().getFullYear();
 
   const triune = [t("neuro"), t("dev"), t("lab")];
@@ -14,7 +15,7 @@ export async function Footer() {
   return (
     <footer className="relative z-10 border-t border-border bg-bg/60">
       <Container className="py-14">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Logo />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
@@ -74,6 +75,22 @@ export async function Footer() {
               <li>{LOCATION}</li>
             </ul>
           </div>
+
+          <nav aria-label="Legal">
+            <h2 className="eyebrow mb-4">{t("legalHeading")}</h2>
+            <ul className="space-y-2.5 text-sm text-muted">
+              <li>
+                <Link href="/legal/notice" className="transition-colors hover:text-fg">
+                  {legal("noticeLink")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/legal/privacy" className="transition-colors hover:text-fg">
+                  {legal("privacyLink")}
+                </Link>
+              </li>
+            </ul>
+          </nav>
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-subtle sm:flex-row sm:items-center">

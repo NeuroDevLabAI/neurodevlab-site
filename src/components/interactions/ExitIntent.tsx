@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { CalendlyButton } from "@/components/ui/CalendlyButton";
+import { BriefCta } from "@/components/ui/BriefCta";
 import { track } from "@/lib/track";
 import { EXIT_INTENT_ENABLED } from "@/lib/config";
 
@@ -16,6 +16,7 @@ const KEY = "nd_exit_intent_seen";
  */
 export function ExitIntent() {
   const t = useTranslations("ExitIntent");
+  const c = useTranslations("Cta");
   const [open, setOpen] = useState(false);
   const dialogRef = useRef<HTMLDivElement>(null);
   const restoreRef = useRef<HTMLElement | null>(null);
@@ -132,7 +133,12 @@ export function ExitIntent() {
           {t("message")}
         </p>
         <div className="mt-6 flex flex-col items-center gap-3">
-          <CalendlyButton label={t("cta")} source="exit_intent" className="w-full" />
+          <BriefCta
+            label={c("primaryShort")}
+            source="exit_intent"
+            className="w-full"
+            onClick={close}
+          />
           <button
             type="button"
             onClick={close}

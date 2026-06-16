@@ -1,8 +1,10 @@
 import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
+import { BriefCta } from "@/components/ui/BriefCta";
 import { CalendlyButton } from "@/components/ui/CalendlyButton";
 import { AvailabilityBadge } from "@/components/ui/AvailabilityBadge";
 import { NeuralBackground } from "@/components/hero/NeuralBackground";
+import { NeuralCapabilities } from "@/components/hero/NeuralCapabilities";
 import { ACCEPTING_CLIENTS, CLIENT_SLOTS } from "@/lib/config";
 
 function PinIcon() {
@@ -34,10 +36,12 @@ function ClockIcon() {
 export async function Hero() {
   const t = await getTranslations("Hero");
   const a = await getTranslations("Availability");
+  const c = await getTranslations("Cta");
 
   return (
     <section className="relative isolate overflow-hidden">
       <NeuralBackground className="absolute inset-0 h-full w-full opacity-70 mask-fade-y" />
+      <NeuralCapabilities />
       <div
         aria-hidden="true"
         className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-bg"
@@ -55,9 +59,18 @@ export async function Hero() {
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
             {t("subheadline")}
           </p>
-          <div className="mt-9 flex flex-col items-start gap-2.5">
-            <CalendlyButton label={t("cta")} source="hero" />
-            <span className="text-sm text-subtle">{t("ctaMicro")}</span>
+          <div className="mt-9 flex flex-col items-start gap-3">
+            <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+              <BriefCta label={c("primary")} source="hero" magnetic />
+              <CalendlyButton
+                label={c("secondary")}
+                source="hero_secondary"
+                variant="secondary"
+                arrow={false}
+                className="px-5 py-2.5 text-sm"
+              />
+            </div>
+            <span className="text-sm text-subtle">{c("micro")}</span>
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted">
             <span className="inline-flex items-center gap-2">

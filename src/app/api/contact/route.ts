@@ -1,13 +1,18 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { CONTACT_EMAIL, CALENDLY_URL } from "@/lib/config";
+import {
+  EMAIL_RE,
+  PROJECT_TYPE_LABELS,
+  BUDGET_LABELS,
+} from "@/lib/brief";
 
 export const runtime = "nodejs";
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
 /* ----------------------------------------------------------- rate limit ---
    Best-effort in-memory limiter: 3 requests / hour / IP. Serverless instances
-   are ephemeral, so for hard guarantees move this to Vercel KV / Upstash. */
+   are ephemeral, so for hard guarantees move this to Vercel KV / Upstash
+   (deferred — see CLAUDE.md / Addendum 1). */
 const WINDOW_MS = 60 * 60 * 1000;
 const MAX_PER_WINDOW = 3;
 const hits = new Map<string, number[]>();
@@ -32,6 +37,27 @@ function rateLimited(ip: string): boolean {
     }
   }
   return false;
+}
+
+/* ----------------------------------------------------------- validation ---
+   zod shape + length caps; the email format reuses the shared EMAIL_RE so the
+   client and server agree. Optional fields are length-capped here and mapped to
+   known labels later (unknown values are dropped, never echoed → no injection). */
+const briefSchema = z.object({
+  name: z.string().max(200),
+  email: z.string().max(200),
+  message: z.string().max(5000),
+  projectType: z.string().max(40).optional().default(""),
+  budget: z.string().max(40).optional().default(""),
+  volume: z.string().max(300).optional().default(""),
+  locale: z.string().max(5).optional().default("en"),
+  company_url: z.string().max(200).optional().default(""),
+});
+
+/** Collapse control chars to spaces — keeps a single-line field from spoofing
+    extra "Label: value" lines in the plain-text Telegram/email payload. */
+function oneLine(s: string): string {
+  return s.replace(/[\r\n\t]+/g, " ").trim();
 }
 
 /* ------------------------------------------------------------- channels --- */
@@ -63,36 +89,36 @@ async function sendTelegram(text: string): Promise<boolean> {
 
 const CONFIRMATION: Record<string, { subject: string; body: (n: string) => string }> = {
   en: {
-    subject: "Thanks — I'll be in touch shortly",
+    subject: "Thanks — your proposal is on its way",
     body: (n) =>
-      `Hi ${n},\n\nThanks for reaching out to NeuroDevLab. I've got your message and will reply within ~2 hours.\n\nWant to go faster? Book a free 30-min call: ${CALENDLY_URL}\n\n— NeuroDevLab, Lausanne`,
+      `Hi ${n},\n\nThanks for your brief to NeuroDevLab. I've got it and will reply within ~2 hours, with a tailored proposal within 24h.\n\nPrefer to talk? Book a free 30-min call: ${CALENDLY_URL}\n\n— NeuroDevLab, Lausanne`,
   },
   fr: {
-    subject: "Merci — je reviens vers vous très vite",
+    subject: "Merci — votre proposition arrive",
     body: (n) =>
-      `Bonjour ${n},\n\nMerci d'avoir contacté NeuroDevLab. J'ai bien reçu votre message et je vous réponds d'ici ~2 heures.\n\nPour aller plus vite, réservez un appel gratuit de 30 min : ${CALENDLY_URL}\n\n— NeuroDevLab, Lausanne`,
+      `Bonjour ${n},\n\nMerci pour votre brief à NeuroDevLab. Je l'ai bien reçu et je vous réponds d'ici ~2 heures, avec une proposition sur mesure sous 24h.\n\nVous préférez en parler ? Réservez un appel gratuit de 30 min : ${CALENDLY_URL}\n\n— NeuroDevLab, Lausanne`,
   },
   de: {
-    subject: "Danke — ich melde mich in Kürze",
+    subject: "Danke — Ihr Vorschlag ist unterwegs",
     body: (n) =>
-      `Hallo ${n},\n\ndanke für Ihre Nachricht an NeuroDevLab. Ich habe sie erhalten und melde mich in ~2 Stunden.\n\nSchneller geht's per kostenlosem 30-Min-Gespräch: ${CALENDLY_URL}\n\n— NeuroDevLab, Lausanne`,
+      `Hallo ${n},\n\ndanke für Ihren Brief an NeuroDevLab. Ich habe ihn erhalten und melde mich in ~2 Stunden, mit einem massgeschneiderten Vorschlag innert 24h.\n\nLieber sprechen? Kostenloses 30-Min-Gespräch buchen: ${CALENDLY_URL}\n\n— NeuroDevLab, Lausanne`,
   },
   it: {
-    subject: "Grazie — ti ricontatto a breve",
+    subject: "Grazie — la tua proposta sta arrivando",
     body: (n) =>
-      `Ciao ${n},\n\ngrazie per aver contattato NeuroDevLab. Ho ricevuto il tuo messaggio e ti rispondo entro ~2 ore.\n\nVuoi fare prima? Prenota una call gratuita di 30 min: ${CALENDLY_URL}\n\n— NeuroDevLab, Lausanne`,
+      `Ciao ${n},\n\ngrazie per il tuo brief a NeuroDevLab. L'ho ricevuto e ti rispondo entro ~2 ore, con una proposta su misura entro 24h.\n\nPreferisci parlarne? Prenota una call gratuita di 30 min: ${CALENDLY_URL}\n\n— NeuroDevLab, Lausanne`,
   },
   es: {
-    subject: "Gracias — te escribo en breve",
+    subject: "Gracias — tu propuesta está en camino",
     body: (n) =>
-      `Hola ${n},\n\ngracias por contactar con NeuroDevLab. He recibido tu mensaje y te respondo en ~2 horas.\n\n¿Quieres ir más rápido? Reserva una llamada gratis de 30 min: ${CALENDLY_URL}\n\n— NeuroDevLab, Lausana`,
+      `Hola ${n},\n\ngracias por tu brief a NeuroDevLab. Lo he recibido y te respondo en ~2 horas, con una propuesta a medida en 24h.\n\n¿Prefieres hablar? Reserva una llamada gratis de 30 min: ${CALENDLY_URL}\n\n— NeuroDevLab, Lausana`,
   },
 };
 
 async function sendEmails(
   name: string,
   email: string,
-  message: string,
+  details: string,
   locale: string,
 ): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
@@ -111,8 +137,8 @@ async function sendEmails(
       from,
       to: CONTACT_EMAIL,
       replyTo: email,
-      subject: `New contact: ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\nLang: ${locale}\n\n${message}`,
+      subject: `New brief: ${name}`,
+      text: details,
     });
     if (error) {
       console.error("[contact] resend owner error", error);
@@ -149,25 +175,31 @@ export async function POST(req: Request) {
     xff?.split(",").pop()?.trim() ||
     "unknown";
 
-  let payload: Record<string, unknown>;
+  let raw: unknown;
   try {
-    payload = await req.json();
+    raw = await req.json();
   } catch {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
 
-  const name = String(payload.name || "")
-    .replace(/[\r\n\t]+/g, " ")
-    .trim()
-    .slice(0, 200);
-  const email = String(payload.email || "").trim().slice(0, 200);
-  const message = String(payload.message || "").trim().slice(0, 5000);
-  const rawLocale = String(payload.locale || "en").slice(0, 5);
-  const locale = ALLOWED_LOCALES.has(rawLocale) ? rawLocale : "en";
-  const honeypot = String(payload.company_url || "");
+  const parsed = briefSchema.safeParse(raw);
+  if (!parsed.success) {
+    return NextResponse.json({ error: "bad_request" }, { status: 400 });
+  }
+  const data = parsed.data;
 
   // Bot trap: pretend success, send nothing.
-  if (honeypot) return NextResponse.json({ ok: true });
+  if (data.company_url) return NextResponse.json({ ok: true });
+
+  const name = oneLine(data.name).slice(0, 200);
+  const email = data.email.trim().slice(0, 200);
+  const message = data.message.trim().slice(0, 5000);
+  const locale = ALLOWED_LOCALES.has(data.locale) ? data.locale : "en";
+
+  // Optional fields: map known keys to labels, drop anything unrecognised.
+  const projectType = PROJECT_TYPE_LABELS[data.projectType] || "";
+  const budget = BUDGET_LABELS[data.budget] || "";
+  const volume = oneLine(data.volume).slice(0, 300);
 
   if (!name || !EMAIL_RE.test(email) || message.length < 5) {
     return NextResponse.json({ error: "invalid" }, { status: 400 });
@@ -177,11 +209,21 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "rate_limited" }, { status: 429 });
   }
 
-  const text = `🌐 New contact — neurodevlab\nName: ${name}\nEmail: ${email}\nLang: ${locale}\n\n${message}`;
+  const metaLines = [
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Lang: ${locale}`,
+    projectType && `Project type: ${projectType}`,
+    budget && `Budget: ${budget}`,
+    volume && `Volume/frequency: ${volume}`,
+  ].filter(Boolean);
+
+  const details = `${metaLines.join("\n")}\n\n${message}`;
+  const text = `🌐 New brief — neurodevlab\n${details}`;
 
   const [tg, mail] = await Promise.all([
     sendTelegram(text),
-    sendEmails(name, email, message, locale),
+    sendEmails(name, email, details, locale),
   ]);
   const delivered = tg || mail;
 
@@ -193,6 +235,9 @@ export async function POST(req: Request) {
       name,
       email,
       locale,
+      projectType,
+      budget,
+      volume,
       message,
     });
     if (process.env.NODE_ENV === "production") {

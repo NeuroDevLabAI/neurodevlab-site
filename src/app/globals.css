@@ -182,3 +182,65 @@
 .animate-aurora {
   animation: nd-aurora 34s ease-in-out infinite;
 }
+
+/* Capability chips — gentle float over the hero field (frozen by reduced-motion). */
+@keyframes nd-float {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -7px);
+  }
+}
+
+.animate-float {
+  animation: nd-float 7s ease-in-out infinite;
+}
+
+/* Before/after — the "automated" track fills once when scrolled into view. */
+@keyframes nd-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* ---------------------------------------------------- calculator range ---- */
+.nd-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  cursor: pointer;
+}
+.nd-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 999px;
+  background: var(--accent);
+  border: 3px solid var(--bg-elevated);
+  box-shadow: 0 0 0 1px var(--border-strong);
+  transition: transform 0.15s var(--ease-tap);
+}
+.nd-range::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+}
+.nd-range::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  border: 3px solid var(--bg-elevated);
+  box-shadow: 0 0 0 1px var(--border-strong);
+}
+.nd-range:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 4px;
+}

@@ -1,10 +1,14 @@
 import { setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/sections/Hero";
-import { Stats } from "@/components/sections/Stats";
+import { TrustSignals } from "@/components/sections/TrustSignals";
 import { Services } from "@/components/sections/Services";
+import { BeforeAfter } from "@/components/sections/BeforeAfter";
+import { Calculator } from "@/components/sections/Calculator";
+import { AiDemo } from "@/components/sections/AiDemo";
+import { HowIWork } from "@/components/sections/HowIWork";
+import { Pricing } from "@/components/sections/Pricing";
+import { Faq } from "@/components/sections/Faq";
 import { Founder } from "@/components/sections/Founder";
-import { CaseStudies } from "@/components/sections/CaseStudies";
-import { SocialProof } from "@/components/sections/SocialProof";
 import { FinalCta } from "@/components/sections/FinalCta";
 
 export default async function HomePage({
@@ -18,11 +22,15 @@ export default async function HomePage({
   return (
     <>
       <Hero />
-      <Stats />
+      <TrustSignals />
       <Services />
+      <BeforeAfter />
+      <Calculator />
+      <AiDemo />
+      <HowIWork />
+      <Pricing />
+      <Faq />
       <Founder />
-      <CaseStudies />
-      <SocialProof />
       <FinalCta />
     </>
   );

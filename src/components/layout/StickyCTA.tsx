@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CalendlyButton } from "@/components/ui/CalendlyButton";
+import { BriefCta } from "@/components/ui/BriefCta";
 import { cn } from "@/lib/cn";
 
 /** Mobile-only persistent bottom CTA bar — the single biggest conversion lever. */
@@ -22,7 +22,7 @@ export function StickyCTA({ label }: { label: string }) {
         show ? "translate-y-0" : "translate-y-full",
       )}
     >
-      <CalendlyButton label={label} source="sticky_mobile" className="w-full" />
+      <BriefCta label={label} source="sticky_mobile" className="w-full" />
     </div>
   );
 }
