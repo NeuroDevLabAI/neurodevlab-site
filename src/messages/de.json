@@ -50,6 +50,12 @@
     "scripts": { "title": "Python-Skripte & Automatisierung", "desc": "Individuelle Skripte, die wiederkehrende manuelle Aufgaben beseitigen." },
     "webapps": { "title": "Moderne Web-Apps", "desc": "Schnelle, schöne Web-Apps mit Next.js und React." }
   },
+  "Founder": {
+    "eyebrow": "Der Gründer",
+    "name": "Loan Schoch",
+    "role": "Gründer",
+    "bio": "Ich bin Loan, ein 22-jähriger Entwickler aus Lausanne, Schweiz. Ich baue KI-Automatisierungssysteme, die rund um die Uhr arbeiten – damit Sie es nicht müssen."
+  },
   "CaseStudies": {
     "eyebrow": "Belege",
     "title": "Fallstudien",

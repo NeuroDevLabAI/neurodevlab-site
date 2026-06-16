@@ -97,7 +97,11 @@ async function sendEmails(
 ): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return false;
-  const from = process.env.RESEND_FROM || "NeuroDevLab <hello@neurodevlab.ai>";
+  // NOTE: Resend rejects a `from` on an unverified domain (gmail.com cannot be
+  // verified). Set RESEND_FROM to a verified-domain sender for delivery; the
+  // owner notification still reaches CONTACT_EMAIL (gmail) and Telegram is the
+  // primary channel, so a rejected `from` degrades gracefully (no silent loss).
+  const from = process.env.RESEND_FROM || "NeuroDevLab <neurodevlab.ai@gmail.com>";
   try {
     const { Resend } = await import("resend");
     const resend = new Resend(apiKey);

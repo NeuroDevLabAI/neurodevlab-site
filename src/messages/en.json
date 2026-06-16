@@ -50,6 +50,12 @@
     "scripts": { "title": "Python Scripts & Automation", "desc": "Custom scripts that eliminate repetitive manual tasks." },
     "webapps": { "title": "Modern Web Apps", "desc": "Fast, beautiful web apps built with Next.js and React." }
   },
+  "Founder": {
+    "eyebrow": "The founder",
+    "name": "Loan Schoch",
+    "role": "Founder",
+    "bio": "I'm Loan, a 22-year-old developer based in Lausanne, Switzerland. I build AI automation systems that work 24/7 so you don't have to."
+  },
   "CaseStudies": {
     "eyebrow": "Proof",
     "title": "Case studies",

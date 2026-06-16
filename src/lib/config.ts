@@ -17,7 +17,7 @@ export const CALENDLY_URL =
 export const GITHUB_URL = "https://github.com/NeuroDevLabAI";
 
 export const CONTACT_EMAIL =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@neurodevlab.ai";
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL || "neurodevlab.ai@gmail.com";
 
 export const PLAUSIBLE_DOMAIN = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN || "";
 
