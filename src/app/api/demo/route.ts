@@ -73,7 +73,8 @@ export async function POST(req: Request) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     // Graceful: no key configured (e.g. preview without the secret).
-    return NextResponse.json({ error: "unavailable" }, { status: 503 });
+    console.error("[demo] ANTHROPIC_API_KEY is not set in this deployment's env");
+    return NextResponse.json({ error: "unavailable", code: 0, kind: "no_key" }, { status: 503 });
   }
 
   let raw: unknown;
@@ -116,7 +117,6 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         model: MODEL,
         max_tokens: MAX_TOKENS,
-        thinking: { type: "disabled" },
         system: SYSTEM,
         messages: [
           {
@@ -129,10 +129,23 @@ export async function POST(req: Request) {
 
     if (!res.ok) {
       const body = await res.text();
-      console.error(`[demo] anthropic HTTP ${res.status}: ${body.slice(0, 500)}`);
+      // Surface the upstream error TYPE (e.g. authentication_error,
+      // invalid_request_error, rate_limit_error) — non-sensitive, no key/body
+      // leaked — so failures are diagnosable from the response + logs.
+      let kind = "http_error";
+      try {
+        kind = (JSON.parse(body) as { error?: { type?: string } })?.error?.type || kind;
+      } catch {
+        /* non-JSON upstream error */
+      }
+      console.error(`[demo] anthropic HTTP ${res.status} (${kind}): ${body.slice(0, 500)}`);
       const status = res.status === 429 ? 429 : 503;
       return NextResponse.json(
-        { error: status === 429 ? "rate_limited" : "unavailable" },
+        {
+          error: status === 429 ? "rate_limited" : "unavailable",
+          code: res.status,
+          kind,
+        },
         { status },
       );
     }
