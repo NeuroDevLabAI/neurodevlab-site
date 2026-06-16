@@ -1,0 +1,166 @@
+{
+  "Meta": {
+    "homeTitle": "NeuroDevLab — Automatisations IA, bots & intégrations",
+    "homeDescription": "J'automatise ce qui vous ralentit. Automatisations IA, bots et intégrations pour PME et fondateurs — livrés en jours, pas en mois. Basé à Lausanne, Suisse.",
+    "servicesTitle": "Services — Automatisation IA & intégrations | NeuroDevLab",
+    "servicesDescription": "Du script Python ponctuel à une véritable équipe IA : automatisations, intégrations d'API, bots Telegram & Discord, web scraping et applications web modernes. Livré en jours.",
+    "contactTitle": "Contact — Réservez un appel gratuit | NeuroDevLab",
+    "contactDescription": "Réservez un appel gratuit de 30 minutes ou envoyez un message. Automatisation IA pour PME et fondateurs en Suisse et en Europe. Réponse généralement en 2 heures.",
+    "ogTagline": "Automatisations IA, bots & intégrations — livrés en jours, pas en mois."
+  },
+  "Nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "contact": "Contact",
+    "book": "Réserver un appel",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "skip": "Aller au contenu"
+  },
+  "Availability": {
+    "open": "Disponible pour de nouveaux projets",
+    "closed": "Complet pour le moment",
+    "accepting": "J'accepte actuellement {count} nouveaux clients"
+  },
+  "Hero": {
+    "headlineLead": "J'automatise ce qui vous ralentit.",
+    "headlineResult": "Économisez 15h/semaine et 3'000 CHF/mois.",
+    "subheadline": "Automatisations IA, bots et intégrations — livrés en jours, pas en mois.",
+    "cta": "Réserver un appel gratuit de 30 min",
+    "ctaMicro": "Gratuit, sans engagement.",
+    "location": "Basé à Lausanne, Suisse",
+    "responseTime": "Répond généralement en 2 heures"
+  },
+  "Stats": {
+    "missions": "Missions livrées",
+    "clients": "Clients satisfaits",
+    "technologies": "Technologies maîtrisées",
+    "availability": "Disponibilité",
+    "availabilityValue": "24/7"
+  },
+  "Services": {
+    "eyebrow": "Ce que je fais",
+    "title": "Une automatisation qui se rembourse",
+    "subtitle": "Du script ponctuel à une équipe IA complète — conçue pour tourner sans vous.",
+    "learnMore": "Voir tous les services",
+    "automations": { "title": "Automatisations IA", "desc": "Des workflows n8n, Make et Zapier qui tournent pendant que vous dormez." },
+    "integrations": { "title": "Intégrations d'API", "desc": "Connectez n'importe quel outil à un autre — Stripe, Shopify, Notion et plus." },
+    "bots": { "title": "Bots Telegram & Discord", "desc": "Des bots sur mesure pour le support, les notifications et les commandes." },
+    "scraping": { "title": "Web Scraping & données", "desc": "Extrayez et transformez les données de n'importe quel site, automatiquement." },
+    "scripts": { "title": "Scripts Python & automatisation", "desc": "Des scripts sur mesure qui éliminent les tâches manuelles répétitives." },
+    "webapps": { "title": "Applications web modernes", "desc": "Des applis rapides et élégantes en Next.js et React." }
+  },
+  "CaseStudies": {
+    "eyebrow": "Preuves",
+    "title": "Études de cas",
+    "subtitle": "De vrais chiffres issus de vraies livraisons — publiés le jour où chaque mission est livrée.",
+    "comingSoon": "Bientôt",
+    "comingSoonDesc": "La première étude de cas arrive dès la première mission livrée.",
+    "metricLabel": "Résultat"
+  },
+  "SocialProof": {
+    "title": "La confiance de fondateurs et de PME en Suisse et en Europe",
+    "subtitle": "Logos et témoignages apparaîtront ici automatiquement à mesure des livraisons."
+  },
+  "FinalCta": {
+    "title": "Prêt à automatiser votre business ?",
+    "subtitle": "Réservez un appel gratuit de 30 minutes. On trouvera un workflow à automatiser cette semaine — sans engagement.",
+    "cta": "Réservez votre appel gratuit"
+  },
+  "Footer": {
+    "tagline": "Automatisations IA, bots et intégrations, depuis Lausanne.",
+    "navHeading": "Navigation",
+    "contactHeading": "Contact",
+    "location": "Lausanne, Suisse",
+    "rights": "Tous droits réservés.",
+    "neuro": "NEURO — ça apprend.",
+    "dev": "DEV — propre & rapide.",
+    "lab": "LAB — tout est mesurable."
+  },
+  "Contact": {
+    "eyebrow": "Discutons",
+    "title": "Réservez un appel ou envoyez un message",
+    "subtitle": "Choisissez un créneau qui vous convient — ou écrivez quelques lignes, je réponds en ~2 heures.",
+    "calendlyTitle": "Réserver un appel gratuit de 30 min",
+    "calendlyOpen": "Ouvrir le calendrier dans un nouvel onglet",
+    "calendlyFallback": "Le calendrier ne se charge pas ?",
+    "formHeading": "Vous préférez écrire ?",
+    "name": "Nom",
+    "namePlaceholder": "Jean Dupont",
+    "email": "E-mail",
+    "emailPlaceholder": "jean@entreprise.com",
+    "message": "Message",
+    "messagePlaceholder": "Qu'aimeriez-vous automatiser ?",
+    "send": "Envoyer le message",
+    "sending": "Envoi…",
+    "success": "Merci ! Votre message est parti — je vous réponds d'ici ~2 heures.",
+    "error": "Une erreur est survenue. Réessayez, ou réservez plutôt un appel.",
+    "rateLimited": "Trop de messages depuis cette adresse. Réessayez plus tard ou réservez un appel.",
+    "validation": "Ajoutez votre nom, un e-mail valide et un court message."
+  },
+  "ServicesPage": {
+    "eyebrow": "Services",
+    "title": "L'automatisation, de bout en bout",
+    "subtitle": "Un développeur, une équipe IA. Je cadre lors d'un appel, je construis en jours, et je vous livre quelque chose qui tourne tout seul.",
+    "outcomeLabel": "Résultat",
+    "automations": {
+      "title": "Automatisations IA",
+      "long": "Des workflows qui relient vos applis et font le travail ennuyeux à votre place — chaque heure, chaque jour, sans que personne ne clique.",
+      "outcome": "Des heures de travail manuel supprimées chaque semaine."
+    },
+    "integrations": {
+      "title": "Intégrations d'API",
+      "long": "Stripe, Shopify, Notion, HubSpot, Google — je relie vos outils pour que les données circulent automatiquement au lieu d'être copiées-collées.",
+      "outcome": "Une seule source de vérité, zéro double saisie."
+    },
+    "bots": {
+      "title": "Bots Telegram & Discord",
+      "long": "Des bots qui répondent aux clients, envoient des notifications et exécutent des commandes — disponibles 24/7 avec la logique exacte de votre activité.",
+      "outcome": "Des réponses instantanées, jour et nuit."
+    },
+    "scraping": {
+      "title": "Web Scraping & données",
+      "long": "Collectez, nettoyez et structurez les données de n'importe quel site, de façon planifiée, livrées dans votre feuille, base de données ou dashboard.",
+      "outcome": "Des données fraîches et structurées, en pilote automatique."
+    },
+    "scripts": {
+      "title": "Scripts Python & automatisation",
+      "long": "Des scripts sur mesure qui éliminent une tâche répétitive précise — rapports, traitement de fichiers, rapprochements, traitements par lot.",
+      "outcome": "La tâche que vous redoutez, faite en quelques secondes."
+    },
+    "webapps": {
+      "title": "Applications web modernes",
+      "long": "Des applis web rapides et accessibles en Next.js et React — dashboards, outils internes et produits orientés clients.",
+      "outcome": "Un produit qui se charge instantanément et qui scale."
+    },
+    "processTitle": "Comment ça marche",
+    "processSubtitle": "Simple, rapide, et conçu pour tourner sans vous.",
+    "step1Title": "Appel gratuit",
+    "step1Desc": "On identifie ce qui vous ralentit et on choisit le workflow à plus fort impact à automatiser en premier.",
+    "step2Title": "Construit en jours",
+    "step2Desc": "Je construis, je teste et je documente — vous recevez des points d'avancement tout du long.",
+    "step3Title": "Livraison & mesure",
+    "step3Desc": "Ça part en production, ça tourne, et vous voyez exactement le temps et l'argent économisés."
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "Cette page n'existe pas encore.",
+    "titleAccent": "Mais votre automatisation, oui.",
+    "home": "Retour à l'accueil",
+    "book": "Réserver un appel gratuit"
+  },
+  "ExitIntent": {
+    "title": "Avant de partir",
+    "message": "Réservez un appel gratuit pour voir si on est faits pour travailler ensemble — sans pitch, sans pression.",
+    "cta": "Réserver un appel rapide",
+    "dismiss": "Non merci"
+  },
+  "Lang": {
+    "label": "Langue",
+    "en": "English",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "es": "Español"
+  }
+}

@@ -1,26 +1,184 @@
 @import "tailwindcss";
 
+/* ----------------------------------------------------------------------------
+   NeuroDevLab — "Quiet Instrument" design system (Tailwind v4, CSS-first).
+   Dark-only. Zinc-tinted near-black. Violet = brand voltage, electric blue =
+   cool counter-signal. Accents rationed (<=10% of any viewport). Depth from a
+   luminance/surface ladder + translucent hairline borders, never glass/shadow.
+   Palette WCAG-AA verified on #09090B (FAFAFA 15.4:1, A1A1AA 7.2:1, 8B8B94 5.4:1).
+---------------------------------------------------------------------------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #09090b;
+  --bg-elevated: #131316;
+  --surface: #18181b;
+  --surface-2: #27272a;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  --border-faint: rgba(255, 255, 255, 0.04);
+  --fg: #fafafa;
+  --fg-muted: #a1a1aa;
+  --fg-subtle: #8b8b94; /* 5.4:1 on bg — AA for small text */
+  --accent: #8b5cf6; /* violet — brand voice, borders, glow (on dark) */
+  --accent-hover: #a78bfa;
+  --accent-2: #38bdf8; /* electric blue — links, focus, data */
+  --accent-2-deep: #06b6d4;
+  --accent-strong: #7c3aed; /* CTA FILL under white text — 5.7:1 AA */
+  --accent-strong-hover: #6d28d9; /* darken on hover, keeps contrast */
+  --success: #22c55e; /* availability dot only */
+  --ring: #38bdf8;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-border-faint: var(--border-faint);
+  --color-fg: var(--fg);
+  --color-muted: var(--fg-muted);
+  --color-subtle: var(--fg-subtle);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-2: var(--accent-2);
+  --color-accent-2-deep: var(--accent-2-deep);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-strong-hover: var(--accent-strong-hover);
+  --color-success: var(--success);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --radius-card: 16px;
+
+  /* Two easing curves do ~90% of motion. */
+  --ease-enter: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-tap: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ---------------------------------------------------------------- base ---- */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    color-scheme: dark;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--accent) 38%, transparent);
+    color: #fff;
+  }
+
+  /* Accessible focus ring (electric blue), keyboard-only. */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Hard reduced-motion gate (WCAG 2.3.3). */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ---------------------------------------------------------- utilities ---- */
+@layer utilities {
+  /* The single brand gradient — for ONE word / 1px lines / CTA edges only. */
+  .text-gradient {
+    background-image: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fg-subtle);
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+    font-family: var(--font-mono);
+  }
+
+  /* Fine grain — sits over the aurora (in the background layer) to kill
+     8-bit gradient banding. Applied below content so text stays crisp. */
+  .noise {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  .mask-fade-y {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+  }
+}
+
+/* --------------------------------------------------------- keyframes ---- */
+@keyframes nd-aurora {
+  0%,
+  100% {
+    transform: translate3d(-2%, -1%, 0);
+  }
+  50% {
+    transform: translate3d(2%, 1%, 0);
+  }
+}
+
+.animate-aurora {
+  animation: nd-aurora 34s ease-in-out infinite;
 }

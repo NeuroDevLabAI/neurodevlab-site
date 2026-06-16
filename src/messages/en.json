@@ -1,0 +1,166 @@
+{
+  "Meta": {
+    "homeTitle": "NeuroDevLab — AI Automations, Bots & Integrations",
+    "homeDescription": "I automate what slows you down. AI-powered automations, bots and integrations for SMEs and founders — delivered in days, not months. Based in Lausanne, Switzerland.",
+    "servicesTitle": "Services — AI Automation & Integrations | NeuroDevLab",
+    "servicesDescription": "From a one-off Python script to a full AI workforce: automations, API integrations, Telegram & Discord bots, web scraping and modern web apps. Delivered in days.",
+    "contactTitle": "Contact — Book a free call | NeuroDevLab",
+    "contactDescription": "Book a free 30-minute call or send a message. AI automation for SMEs and founders across Switzerland and Europe. Usually responds within 2 hours.",
+    "ogTagline": "AI automations, bots & integrations — delivered in days, not months."
+  },
+  "Nav": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact",
+    "book": "Book a call",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "skip": "Skip to content"
+  },
+  "Availability": {
+    "open": "Available for new projects",
+    "closed": "Currently at capacity",
+    "accepting": "Currently accepting {count} new clients"
+  },
+  "Hero": {
+    "headlineLead": "I automate what slows you down.",
+    "headlineResult": "Save 15h/week and 3'000 CHF/month.",
+    "subheadline": "AI-powered automations, bots and integrations — delivered in days, not months.",
+    "cta": "Book a free 30-min call",
+    "ctaMicro": "Free, no commitment.",
+    "location": "Based in Lausanne, Switzerland",
+    "responseTime": "Usually responds within 2 hours"
+  },
+  "Stats": {
+    "missions": "Missions delivered",
+    "clients": "Happy clients",
+    "technologies": "Technologies mastered",
+    "availability": "Availability",
+    "availabilityValue": "24/7"
+  },
+  "Services": {
+    "eyebrow": "What I do",
+    "title": "Automation that pays for itself",
+    "subtitle": "From a one-off script to a full AI workforce — built to run without you.",
+    "learnMore": "See all services",
+    "automations": { "title": "AI Automations", "desc": "n8n, Make and Zapier workflows that run while you sleep." },
+    "integrations": { "title": "API Integrations", "desc": "Connect any tool to any other — Stripe, Shopify, Notion and more." },
+    "bots": { "title": "Telegram & Discord Bots", "desc": "Custom bots that handle support, notifications and commands." },
+    "scraping": { "title": "Web Scraping & Data", "desc": "Extract and transform data from any website automatically." },
+    "scripts": { "title": "Python Scripts & Automation", "desc": "Custom scripts that eliminate repetitive manual tasks." },
+    "webapps": { "title": "Modern Web Apps", "desc": "Fast, beautiful web apps built with Next.js and React." }
+  },
+  "CaseStudies": {
+    "eyebrow": "Proof",
+    "title": "Case studies",
+    "subtitle": "Real numbers from real deliveries — published the day each mission ships.",
+    "comingSoon": "Coming soon",
+    "comingSoonDesc": "The first case study lands right after the first delivered mission.",
+    "metricLabel": "Result"
+  },
+  "SocialProof": {
+    "title": "Trusted by founders and SMEs across Switzerland and Europe",
+    "subtitle": "Logos and testimonials appear here automatically as missions are delivered."
+  },
+  "FinalCta": {
+    "title": "Ready to automate your business?",
+    "subtitle": "Book a free 30-minute call. We'll find one workflow to automate this week — no commitment.",
+    "cta": "Book your free call"
+  },
+  "Footer": {
+    "tagline": "AI automations, bots and integrations, from Lausanne.",
+    "navHeading": "Navigation",
+    "contactHeading": "Contact",
+    "location": "Lausanne, Switzerland",
+    "rights": "All rights reserved.",
+    "neuro": "NEURO — it learns.",
+    "dev": "DEV — clean & fast.",
+    "lab": "LAB — everything measurable."
+  },
+  "Contact": {
+    "eyebrow": "Let's talk",
+    "title": "Book a call or send a message",
+    "subtitle": "Pick a slot that suits you — or write a few lines and I'll reply within ~2 hours.",
+    "calendlyTitle": "Book a free 30-min call",
+    "calendlyOpen": "Open the calendar in a new tab",
+    "calendlyFallback": "Trouble loading the calendar?",
+    "formHeading": "Prefer to write?",
+    "name": "Name",
+    "namePlaceholder": "Jane Doe",
+    "email": "Email",
+    "emailPlaceholder": "jane@company.com",
+    "message": "Message",
+    "messagePlaceholder": "What would you like to automate?",
+    "send": "Send message",
+    "sending": "Sending…",
+    "success": "Thanks! Your message is on its way — I'll get back to you within ~2 hours.",
+    "error": "Something went wrong. Please try again, or book a call instead.",
+    "rateLimited": "Too many messages from this address. Please try again later or book a call.",
+    "validation": "Please add your name, a valid email and a short message."
+  },
+  "ServicesPage": {
+    "eyebrow": "Services",
+    "title": "Automation, end to end",
+    "subtitle": "One developer, one AI workforce. I scope it on a call, build it in days, and hand you something that just runs.",
+    "outcomeLabel": "Outcome",
+    "automations": {
+      "title": "AI Automations",
+      "long": "Workflows that connect your apps and do the boring work for you — every hour, every day, without anyone clicking a button.",
+      "outcome": "Hours of manual work removed every week."
+    },
+    "integrations": {
+      "title": "API Integrations",
+      "long": "Stripe, Shopify, Notion, HubSpot, Google — I wire your tools together so data flows automatically instead of being copy-pasted.",
+      "outcome": "One source of truth, zero double entry."
+    },
+    "bots": {
+      "title": "Telegram & Discord Bots",
+      "long": "Bots that answer customers, send notifications and run commands — available 24/7 with the exact logic your business needs.",
+      "outcome": "Instant responses, day and night."
+    },
+    "scraping": {
+      "title": "Web Scraping & Data",
+      "long": "Collect, clean and structure data from any website on a schedule, delivered straight to your sheet, database or dashboard.",
+      "outcome": "Fresh, structured data on autopilot."
+    },
+    "scripts": {
+      "title": "Python Scripts & Automation",
+      "long": "Tailor-made scripts that eliminate a specific repetitive task — reports, file processing, reconciliations, batch jobs.",
+      "outcome": "The task you dread, done in seconds."
+    },
+    "webapps": {
+      "title": "Modern Web Apps",
+      "long": "Fast, accessible web apps built with Next.js and React — dashboards, internal tools and customer-facing products.",
+      "outcome": "A product that loads instantly and scales."
+    },
+    "processTitle": "How it works",
+    "processSubtitle": "Simple, fast, and built to run without you.",
+    "step1Title": "Free call",
+    "step1Desc": "We map what slows you down and pick the highest-impact workflow to automate first.",
+    "step2Title": "Build in days",
+    "step2Desc": "I build, test and document it — you get progress updates the whole way.",
+    "step3Title": "Deliver & measure",
+    "step3Desc": "It ships, it runs, and you see exactly how much time and money it saves."
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "This page doesn't exist yet.",
+    "titleAccent": "But your automation can.",
+    "home": "Back to home",
+    "book": "Book a free call"
+  },
+  "ExitIntent": {
+    "title": "Before you go",
+    "message": "Book a free call to see if we're a good fit — no pitch, no pressure.",
+    "cta": "Book a quick call",
+    "dismiss": "No thanks"
+  },
+  "Lang": {
+    "label": "Language",
+    "en": "English",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "es": "Español"
+  }
+}

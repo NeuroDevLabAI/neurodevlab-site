@@ -1,0 +1,166 @@
+{
+  "Meta": {
+    "homeTitle": "NeuroDevLab — Automazioni IA, bot e integrazioni",
+    "homeDescription": "Automatizzo ciò che ti rallenta. Automazioni basate sull'IA, bot e integrazioni per PMI e founder — consegnati in giorni, non in mesi. Con sede a Losanna, Svizzera.",
+    "servicesTitle": "Servizi — Automazione IA e integrazioni | NeuroDevLab",
+    "servicesDescription": "Dallo script Python una tantum a un'intera forza lavoro IA: automazioni, integrazioni di API, bot Telegram e Discord, web scraping e web app moderne. Consegnati in giorni.",
+    "contactTitle": "Contatto — Prenota una call gratuita | NeuroDevLab",
+    "contactDescription": "Prenota una call gratuita di 30 minuti o invia un messaggio. Automazione IA per PMI e founder in Svizzera e in Europa. Di solito risponde entro 2 ore.",
+    "ogTagline": "Automazioni IA, bot e integrazioni — consegnati in giorni, non in mesi."
+  },
+  "Nav": {
+    "home": "Home",
+    "services": "Servizi",
+    "contact": "Contatto",
+    "book": "Prenota una call",
+    "openMenu": "Apri il menu",
+    "closeMenu": "Chiudi il menu",
+    "skip": "Vai al contenuto"
+  },
+  "Availability": {
+    "open": "Disponibile per nuovi progetti",
+    "closed": "Al momento al completo",
+    "accepting": "Al momento accetto {count} nuovi clienti"
+  },
+  "Hero": {
+    "headlineLead": "Automatizzo ciò che ti rallenta.",
+    "headlineResult": "Risparmia 15 ore a settimana e 3'000 CHF al mese.",
+    "subheadline": "Automazioni basate sull'IA, bot e integrazioni — consegnati in giorni, non in mesi.",
+    "cta": "Prenota una call gratuita di 30 min",
+    "ctaMicro": "Gratis, senza impegno.",
+    "location": "Con sede a Losanna, Svizzera",
+    "responseTime": "Di solito risponde entro 2 ore"
+  },
+  "Stats": {
+    "missions": "Progetti consegnati",
+    "clients": "Clienti soddisfatti",
+    "technologies": "Tecnologie padroneggiate",
+    "availability": "Disponibilità",
+    "availabilityValue": "24/7"
+  },
+  "Services": {
+    "eyebrow": "Cosa faccio",
+    "title": "Un'automazione che si ripaga da sola",
+    "subtitle": "Dallo script una tantum a un'intera forza lavoro IA — pensata per funzionare senza di te.",
+    "learnMore": "Vedi tutti i servizi",
+    "automations": { "title": "Automazioni IA", "desc": "Workflow n8n, Make e Zapier che lavorano mentre dormi." },
+    "integrations": { "title": "Integrazioni di API", "desc": "Collega qualsiasi strumento a un altro — Stripe, Shopify, Notion e altro." },
+    "bots": { "title": "Bot Telegram e Discord", "desc": "Bot su misura per supporto, notifiche e comandi." },
+    "scraping": { "title": "Web Scraping e dati", "desc": "Estrai e trasforma i dati da qualsiasi sito, automaticamente." },
+    "scripts": { "title": "Script Python e automazione", "desc": "Script su misura che eliminano le attività manuali ripetitive." },
+    "webapps": { "title": "Web app moderne", "desc": "App web veloci e curate, costruite con Next.js e React." }
+  },
+  "CaseStudies": {
+    "eyebrow": "Prove",
+    "title": "Case study",
+    "subtitle": "Numeri reali da consegne reali — pubblicati il giorno in cui ogni progetto va in produzione.",
+    "comingSoon": "In arrivo",
+    "comingSoonDesc": "Il primo case study arriva subito dopo il primo progetto consegnato.",
+    "metricLabel": "Risultato"
+  },
+  "SocialProof": {
+    "title": "Scelto da founder e PMI in Svizzera e in Europa",
+    "subtitle": "Loghi e testimonianze appariranno qui automaticamente man mano che i progetti vengono consegnati."
+  },
+  "FinalCta": {
+    "title": "Pronto ad automatizzare la tua attività?",
+    "subtitle": "Prenota una call gratuita di 30 minuti. Troveremo un workflow da automatizzare questa settimana — senza impegno.",
+    "cta": "Prenota la tua call gratuita"
+  },
+  "Footer": {
+    "tagline": "Automazioni IA, bot e integrazioni, da Losanna.",
+    "navHeading": "Navigazione",
+    "contactHeading": "Contatto",
+    "location": "Losanna, Svizzera",
+    "rights": "Tutti i diritti riservati.",
+    "neuro": "NEURO — impara.",
+    "dev": "DEV — pulito e veloce.",
+    "lab": "LAB — tutto misurabile."
+  },
+  "Contact": {
+    "eyebrow": "Parliamone",
+    "title": "Prenota una call o invia un messaggio",
+    "subtitle": "Scegli uno slot che ti va bene — oppure scrivi due righe e ti rispondo entro ~2 ore.",
+    "calendlyTitle": "Prenota una call gratuita di 30 min",
+    "calendlyOpen": "Apri il calendario in una nuova scheda",
+    "calendlyFallback": "Il calendario non si carica?",
+    "formHeading": "Preferisci scrivere?",
+    "name": "Nome",
+    "namePlaceholder": "Mario Rossi",
+    "email": "Email",
+    "emailPlaceholder": "mario@azienda.com",
+    "message": "Messaggio",
+    "messagePlaceholder": "Cosa vorresti automatizzare?",
+    "send": "Invia messaggio",
+    "sending": "Invio…",
+    "success": "Grazie! Il tuo messaggio è in viaggio — ti rispondo entro ~2 ore.",
+    "error": "Qualcosa è andato storto. Riprova, oppure prenota una call.",
+    "rateLimited": "Troppi messaggi da questo indirizzo. Riprova più tardi o prenota una call.",
+    "validation": "Aggiungi nome, un'email valida e un breve messaggio."
+  },
+  "ServicesPage": {
+    "eyebrow": "Servizi",
+    "title": "Automazione, dall'inizio alla fine",
+    "subtitle": "Uno sviluppatore, una forza lavoro IA. Definisco tutto in una call, costruisco in giorni e ti consegno qualcosa che funziona da solo.",
+    "outcomeLabel": "Risultato",
+    "automations": {
+      "title": "Automazioni IA",
+      "long": "Workflow che collegano le tue app e fanno il lavoro noioso al posto tuo — ogni ora, ogni giorno, senza che nessuno clicchi.",
+      "outcome": "Ore di lavoro manuale tolte ogni settimana."
+    },
+    "integrations": {
+      "title": "Integrazioni di API",
+      "long": "Stripe, Shopify, Notion, HubSpot, Google — collego i tuoi strumenti perché i dati scorrano da soli invece di essere copiati a mano.",
+      "outcome": "Un'unica fonte di verità, zero doppia digitazione."
+    },
+    "bots": {
+      "title": "Bot Telegram e Discord",
+      "long": "Bot che rispondono ai clienti, inviano notifiche ed eseguono comandi — disponibili 24/7 con la logica esatta della tua attività.",
+      "outcome": "Risposte istantanee, giorno e notte."
+    },
+    "scraping": {
+      "title": "Web Scraping e dati",
+      "long": "Raccogli, pulisci e struttura i dati da qualsiasi sito su base programmata, consegnati nel tuo foglio, database o dashboard.",
+      "outcome": "Dati freschi e strutturati in pilota automatico."
+    },
+    "scripts": {
+      "title": "Script Python e automazione",
+      "long": "Script su misura che eliminano una specifica attività ripetitiva — report, elaborazione file, riconciliazioni, processi batch.",
+      "outcome": "L'attività che temi, fatta in pochi secondi."
+    },
+    "webapps": {
+      "title": "Web app moderne",
+      "long": "Web app veloci e accessibili con Next.js e React — dashboard, strumenti interni e prodotti rivolti ai clienti.",
+      "outcome": "Un prodotto che si carica all'istante e scala."
+    },
+    "processTitle": "Come funziona",
+    "processSubtitle": "Semplice, veloce e pensato per funzionare senza di te.",
+    "step1Title": "Call gratuita",
+    "step1Desc": "Individuiamo ciò che ti rallenta e scegliamo il workflow a maggiore impatto da automatizzare per primo.",
+    "step2Title": "Costruito in giorni",
+    "step2Desc": "Costruisco, testo e documento — ricevi aggiornamenti sull'avanzamento lungo tutto il percorso.",
+    "step3Title": "Consegna e misura",
+    "step3Desc": "Va in produzione, funziona, e vedi esattamente quanto tempo e denaro fa risparmiare."
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "Questa pagina non esiste ancora.",
+    "titleAccent": "La tua automazione sì.",
+    "home": "Torna alla home",
+    "book": "Prenota una call gratuita"
+  },
+  "ExitIntent": {
+    "title": "Prima di andare",
+    "message": "Prenota una call gratuita per capire se siamo in sintonia — niente pitch, nessuna pressione.",
+    "cta": "Prenota una call veloce",
+    "dismiss": "No, grazie"
+  },
+  "Lang": {
+    "label": "Lingua",
+    "en": "English",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "es": "Español"
+  }
+}

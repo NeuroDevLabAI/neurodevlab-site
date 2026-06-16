@@ -1,0 +1,166 @@
+{
+  "Meta": {
+    "homeTitle": "NeuroDevLab — KI-Automatisierungen, Bots & Integrationen",
+    "homeDescription": "Ich automatisiere, was Sie ausbremst. KI-gestützte Automatisierungen, Bots und Integrationen für KMU und Gründer — in Tagen geliefert, nicht in Monaten. Sitz in Lausanne, Schweiz.",
+    "servicesTitle": "Leistungen — KI-Automatisierung & Integrationen | NeuroDevLab",
+    "servicesDescription": "Vom einmaligen Python-Skript bis zur kompletten KI-Belegschaft: Automatisierungen, API-Integrationen, Telegram- & Discord-Bots, Web Scraping und moderne Web-Apps. In Tagen geliefert.",
+    "contactTitle": "Kontakt — Kostenloses Gespräch buchen | NeuroDevLab",
+    "contactDescription": "Buchen Sie ein kostenloses 30-Minuten-Gespräch oder senden Sie eine Nachricht. KI-Automatisierung für KMU und Gründer in der Schweiz und Europa. Antwort meist innerhalb von 2 Stunden.",
+    "ogTagline": "KI-Automatisierungen, Bots & Integrationen — in Tagen geliefert, nicht in Monaten."
+  },
+  "Nav": {
+    "home": "Start",
+    "services": "Leistungen",
+    "contact": "Kontakt",
+    "book": "Gespräch buchen",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "skip": "Zum Inhalt springen"
+  },
+  "Availability": {
+    "open": "Verfügbar für neue Projekte",
+    "closed": "Derzeit ausgebucht",
+    "accepting": "Aktuell nehme ich {count} neue Kunden an"
+  },
+  "Hero": {
+    "headlineLead": "Ich automatisiere, was Sie ausbremst.",
+    "headlineResult": "Sparen Sie 15 Std./Woche und 3'000 CHF/Monat.",
+    "subheadline": "KI-gestützte Automatisierungen, Bots und Integrationen — in Tagen geliefert, nicht in Monaten.",
+    "cta": "Kostenloses 30-Min-Gespräch buchen",
+    "ctaMicro": "Kostenlos, unverbindlich.",
+    "location": "Sitz in Lausanne, Schweiz",
+    "responseTime": "Antwortet meist innerhalb von 2 Stunden"
+  },
+  "Stats": {
+    "missions": "Gelieferte Projekte",
+    "clients": "Zufriedene Kunden",
+    "technologies": "Beherrschte Technologien",
+    "availability": "Verfügbarkeit",
+    "availabilityValue": "24/7"
+  },
+  "Services": {
+    "eyebrow": "Was ich mache",
+    "title": "Automatisierung, die sich selbst bezahlt",
+    "subtitle": "Vom einmaligen Skript bis zur kompletten KI-Belegschaft — gebaut, um ohne Sie zu laufen.",
+    "learnMore": "Alle Leistungen ansehen",
+    "automations": { "title": "KI-Automatisierungen", "desc": "n8n-, Make- und Zapier-Workflows, die laufen, während Sie schlafen." },
+    "integrations": { "title": "API-Integrationen", "desc": "Verbinden Sie jedes Tool mit jedem anderen — Stripe, Shopify, Notion und mehr." },
+    "bots": { "title": "Telegram- & Discord-Bots", "desc": "Massgeschneiderte Bots für Support, Benachrichtigungen und Befehle." },
+    "scraping": { "title": "Web Scraping & Daten", "desc": "Extrahieren und transformieren Sie Daten von jeder Website — automatisch." },
+    "scripts": { "title": "Python-Skripte & Automatisierung", "desc": "Individuelle Skripte, die wiederkehrende manuelle Aufgaben beseitigen." },
+    "webapps": { "title": "Moderne Web-Apps", "desc": "Schnelle, schöne Web-Apps mit Next.js und React." }
+  },
+  "CaseStudies": {
+    "eyebrow": "Belege",
+    "title": "Fallstudien",
+    "subtitle": "Echte Zahlen aus echten Lieferungen — veröffentlicht am Tag, an dem jedes Projekt ausgeliefert wird.",
+    "comingSoon": "Demnächst",
+    "comingSoonDesc": "Die erste Fallstudie erscheint direkt nach dem ersten gelieferten Projekt.",
+    "metricLabel": "Ergebnis"
+  },
+  "SocialProof": {
+    "title": "Vertraut von Gründern und KMU in der Schweiz und Europa",
+    "subtitle": "Logos und Testimonials erscheinen hier automatisch, sobald Projekte geliefert werden."
+  },
+  "FinalCta": {
+    "title": "Bereit, Ihr Business zu automatisieren?",
+    "subtitle": "Buchen Sie ein kostenloses 30-Minuten-Gespräch. Wir finden diese Woche einen Workflow zum Automatisieren — unverbindlich.",
+    "cta": "Kostenloses Gespräch buchen"
+  },
+  "Footer": {
+    "tagline": "KI-Automatisierungen, Bots und Integrationen, aus Lausanne.",
+    "navHeading": "Navigation",
+    "contactHeading": "Kontakt",
+    "location": "Lausanne, Schweiz",
+    "rights": "Alle Rechte vorbehalten.",
+    "neuro": "NEURO — es lernt.",
+    "dev": "DEV — sauber & schnell.",
+    "lab": "LAB — alles messbar."
+  },
+  "Contact": {
+    "eyebrow": "Sprechen wir",
+    "title": "Gespräch buchen oder Nachricht senden",
+    "subtitle": "Wählen Sie einen passenden Termin — oder schreiben Sie ein paar Zeilen, ich antworte in ~2 Stunden.",
+    "calendlyTitle": "Kostenloses 30-Min-Gespräch buchen",
+    "calendlyOpen": "Kalender in neuem Tab öffnen",
+    "calendlyFallback": "Kalender lädt nicht?",
+    "formHeading": "Lieber schreiben?",
+    "name": "Name",
+    "namePlaceholder": "Max Mustermann",
+    "email": "E-Mail",
+    "emailPlaceholder": "max@firma.com",
+    "message": "Nachricht",
+    "messagePlaceholder": "Was möchten Sie automatisieren?",
+    "send": "Nachricht senden",
+    "sending": "Senden…",
+    "success": "Danke! Ihre Nachricht ist unterwegs — ich melde mich in ~2 Stunden.",
+    "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder buchen Sie ein Gespräch.",
+    "rateLimited": "Zu viele Nachrichten von dieser Adresse. Bitte später erneut versuchen oder ein Gespräch buchen.",
+    "validation": "Bitte Name, eine gültige E-Mail und eine kurze Nachricht angeben."
+  },
+  "ServicesPage": {
+    "eyebrow": "Leistungen",
+    "title": "Automatisierung, von A bis Z",
+    "subtitle": "Ein Entwickler, eine KI-Belegschaft. Ich definiere es im Gespräch, baue es in Tagen und übergebe Ihnen etwas, das einfach läuft.",
+    "outcomeLabel": "Ergebnis",
+    "automations": {
+      "title": "KI-Automatisierungen",
+      "long": "Workflows, die Ihre Apps verbinden und die langweilige Arbeit für Sie erledigen — jede Stunde, jeden Tag, ohne dass jemand klickt.",
+      "outcome": "Stunden manueller Arbeit jede Woche eingespart."
+    },
+    "integrations": {
+      "title": "API-Integrationen",
+      "long": "Stripe, Shopify, Notion, HubSpot, Google — ich verbinde Ihre Tools, damit Daten automatisch fliessen statt kopiert zu werden.",
+      "outcome": "Eine Single Source of Truth, keine Doppeleingaben."
+    },
+    "bots": {
+      "title": "Telegram- & Discord-Bots",
+      "long": "Bots, die Kunden antworten, Benachrichtigungen senden und Befehle ausführen — rund um die Uhr mit genau der Logik, die Ihr Business braucht.",
+      "outcome": "Sofortige Antworten, Tag und Nacht."
+    },
+    "scraping": {
+      "title": "Web Scraping & Daten",
+      "long": "Sammeln, bereinigen und strukturieren Sie Daten von jeder Website nach Zeitplan — direkt in Ihre Tabelle, Datenbank oder Ihr Dashboard.",
+      "outcome": "Frische, strukturierte Daten auf Autopilot."
+    },
+    "scripts": {
+      "title": "Python-Skripte & Automatisierung",
+      "long": "Massgeschneiderte Skripte, die eine bestimmte wiederkehrende Aufgabe beseitigen — Reports, Dateiverarbeitung, Abstimmungen, Batch-Jobs.",
+      "outcome": "Die ungeliebte Aufgabe, in Sekunden erledigt."
+    },
+    "webapps": {
+      "title": "Moderne Web-Apps",
+      "long": "Schnelle, barrierefreie Web-Apps mit Next.js und React — Dashboards, interne Tools und kundenorientierte Produkte.",
+      "outcome": "Ein Produkt, das sofort lädt und skaliert."
+    },
+    "processTitle": "So läuft es",
+    "processSubtitle": "Einfach, schnell und gebaut, um ohne Sie zu laufen.",
+    "step1Title": "Kostenloses Gespräch",
+    "step1Desc": "Wir kartieren, was Sie ausbremst, und wählen den wirkungsvollsten Workflow zuerst.",
+    "step2Title": "In Tagen gebaut",
+    "step2Desc": "Ich baue, teste und dokumentiere — Sie erhalten den ganzen Weg über Fortschritts-Updates.",
+    "step3Title": "Liefern & messen",
+    "step3Desc": "Es geht live, es läuft, und Sie sehen genau, wie viel Zeit und Geld es spart."
+  },
+  "NotFound": {
+    "code": "404",
+    "title": "Diese Seite gibt es noch nicht.",
+    "titleAccent": "Ihre Automatisierung schon.",
+    "home": "Zurück zum Start",
+    "book": "Kostenloses Gespräch buchen"
+  },
+  "ExitIntent": {
+    "title": "Bevor Sie gehen",
+    "message": "Buchen Sie ein kostenloses Gespräch, um zu sehen, ob wir zusammenpassen — kein Pitch, kein Druck.",
+    "cta": "Kurzes Gespräch buchen",
+    "dismiss": "Nein danke"
+  },
+  "Lang": {
+    "label": "Sprache",
+    "en": "English",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "es": "Español"
+  }
+}
