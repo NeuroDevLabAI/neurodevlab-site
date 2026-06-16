@@ -95,7 +95,7 @@ export default async function LocaleLayout({
     description: meta("homeDescription"),
     url: SITE_URL,
     image: `${SITE_URL}/og?locale=${locale}`,
-    logo: `${SITE_URL}/icon.svg`,
+    logo: `${SITE_URL}/icon-512.png`,
     email: CONTACT_EMAIL,
     areaServed: ["Switzerland", "Europe"],
     address: {
