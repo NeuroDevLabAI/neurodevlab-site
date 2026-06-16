@@ -43,13 +43,14 @@ export function ExitIntent() {
 
     if (fine) {
       // Desktop: real exit-intent — the cursor leaves through the top edge.
-      // Armed only after 4s so it never fires on load.
+      // Armed only after 30s on the page, so it never fires on load and never on
+      // an early tab-switch/cursor-to-toolbar in the first half-minute.
       function onLeave(e: MouseEvent) {
         if (e.clientY <= 0 && !e.relatedTarget) trigger();
       }
       const armed = window.setTimeout(
         () => document.addEventListener("mouseout", onLeave),
-        4000,
+        30000,
       );
       cleanups.push(() => {
         window.clearTimeout(armed);
