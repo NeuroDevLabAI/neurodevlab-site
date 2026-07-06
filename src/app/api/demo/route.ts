@@ -19,8 +19,24 @@ export const runtime = "nodejs";
 ============================================================================ */
 
 const ANTHROPIC_URL = "https://api.anthropic.com/v1/messages";
-const MODEL = process.env.ANTHROPIC_MODEL || "claude-sonnet-4-6";
-const MAX_TOKENS = Math.max(64, Number(process.env.DEMO_MAX_TOKENS || "400"));
+
+/* Env parsing hardened (LOI2/LOI3). A malformed env value must NEVER reach the
+   Anthropic API. `Number("abc") → NaN`, and both NaN and an oversized number
+   produce a 400 invalid_request_error upstream:
+     max_tokens: NaN → JSON `null` → "max_tokens: Input should be a valid integer"
+     max_tokens: 999999 → "max_tokens ... is greater than the maximum".
+   That was the PRODUCTION root cause of the demo returning only the graceful
+   fallback: a bad DEMO_MAX_TOKENS made every call 503. intEnv() coerces any
+   input to a finite integer clamped to [lo, hi], and falls back to `def` on
+   empty / NaN / ±Infinity — so no env value, however broken, can break the call. */
+function intEnv(name: string, def: number, lo: number, hi: number): number {
+  const raw = (process.env[name] || "").trim();
+  const n = Math.floor(Number(raw));
+  return raw && Number.isFinite(n) ? Math.min(hi, Math.max(lo, n)) : def;
+}
+
+const MODEL = (process.env.ANTHROPIC_MODEL || "").trim() || "claude-sonnet-4-6";
+const MAX_TOKENS = intEnv("DEMO_MAX_TOKENS", 400, 64, 1024);
 const TIMEOUT_MS = 20_000;
 const MAX_INPUT = 600;
 
@@ -28,7 +44,7 @@ const MAX_INPUT = 600;
    Best-effort in-memory limiter: 10 demos / hour / IP. Serverless instances are
    ephemeral; Upstash is deferred (Addendum 1 / CLAUDE.md). */
 const WINDOW_MS = 60 * 60 * 1000;
-const MAX_PER_WINDOW = Math.max(3, Number(process.env.DEMO_MAX_PER_HOUR || "10"));
+const MAX_PER_WINDOW = intEnv("DEMO_MAX_PER_HOUR", 10, 3, 1000);
 const hits = new Map<string, number[]>();
 
 function rateLimited(ip: string): boolean {

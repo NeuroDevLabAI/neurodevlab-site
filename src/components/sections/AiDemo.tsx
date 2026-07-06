@@ -51,6 +51,17 @@ export function AiDemo() {
     }
   }
 
+  // The demo is 100% client-side (it needs a fetch to /api/demo); there is no
+  // server-side form handler. We therefore drive it from an explicit button
+  // onClick and keep the button as type="button". If the client JS ever fails
+  // to run (stale deploy, blocked bundle, CSP change, a hydration error
+  // elsewhere on the page), a type="submit" button would fall back to a NATIVE
+  // form submit → full-page navigation → the browser's "This page couldn't
+  // load" screen instead of an inline answer. type="button" makes that
+  // impossible: worst case a dead click, never a broken navigation. onSubmit
+  // stays as a belt-and-suspenders guard (also covers Enter in any future
+  // single-line field added to this form). LOI3: the bug is now impossible,
+  // not merely improbable.
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     ask(inputRef.current?.value || "");
@@ -88,7 +99,8 @@ export function AiDemo() {
               />
               <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <button
-                  type="submit"
+                  type="button"
+                  onClick={() => ask(inputRef.current?.value || "")}
                   disabled={state === "loading"}
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-accent-strong px-6 py-3 text-[15px] font-medium text-white shadow-[0_10px_34px_-12px_rgba(139,92,246,0.6)] transition-[transform,background-color] duration-200 ease-out hover:bg-accent-strong-hover hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
                 >
